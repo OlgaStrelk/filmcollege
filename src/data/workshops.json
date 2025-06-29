@@ -1,0 +1,8 @@
+[
+  { "title": "Актер", "image": "/images/actor.jpg" },
+  { "title": "Сценарист", "image": "/images/screenwriter.jpg" },
+  { "title": "Режиссер", "image": "/images/director.jpg" },
+  { "title": "Режиссер монтажа", "image": "/images/editor.jpg" },
+  { "title": "Звукорежиссер", "image": "/images/soundengineer.jpg" },
+  { "title": "Оператор", "image": "/images/operator.jpg" }
+]

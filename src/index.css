@@ -1,0 +1,13 @@
+:root {
+  font-family: "Geologica", sans-serif;
+  box-sizing: border-box;
+  background-color: #efeeea;
+  color: #191919;
+}
+* {  margin: 0;
+  padding: 0;}
+h2 {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.2;
+}
