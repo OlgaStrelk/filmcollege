@@ -1,1 +1,1 @@
-export * from "./Teachers";
+export { default as Teachers } from "./Teachers";

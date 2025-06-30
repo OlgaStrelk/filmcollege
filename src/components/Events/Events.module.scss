@@ -1,69 +1,93 @@
 .events {
-  padding: 50px 0;
 
-  h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
+  margin: 80px 0;
 
   .events-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 434px));
+  justify-content: space-between;
+  gap: 10px;
   }
 
   .event-card {
-    background-color: white;
-    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #19191926;
+    border-radius: 32px;
     overflow: hidden;
   }
 
   .event-image {
     width: 100%;
-    height: 200px;
+    height: 264px;
     object-fit: cover;
+    border-radius: 12px;
   }
 
   .event-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     padding: 20px;
   }
 
-  .event {
-    font-size: 18px;
-    margin-bottom: 10px;
+  .event-title {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: -0.32px;
+    line-height: 120%;
+    color: #0b151e;
+    margin: 0;
   }
 
   .event-description {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: #19191966;
+    margin: 0;
   }
 
   .all-events-btn {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
   }
 
-  .more-link {
-    display: inline-flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    gap: 5px;
+  @media (max-width: 767px) {
+    padding: 40px 20px;
 
-    .icon {
-      width: 20px;
-      height: 20px;
-      background-color: white;
-      color: black;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
+    h2 {
+      font-size: 36px;
+      letter-spacing: -0.72px;
+    }
+
+    .events-grid {
+      gap: 12px;
+    }
+
+    .event-card {
+      width: 100%;
+      border-radius: 24px;
+    }
+
+    .event-image {
+      height: 200px;
+      border-radius: 8px;
+    }
+
+    .event-content {
+      padding: 16px;
+    }
+
+    .event-title {
+      font-size: 24px;
+      letter-spacing: -0.24px;
+      line-height: 28.8px;
+    }
+
+    .event-description {
+      font-size: 14px;
+      line-height: 19.6px;
     }
   }
 }

@@ -1,0 +1,199 @@
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  border-radius: 30px;
+  font-family: 'Geologica', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1px hsl(215, 20.2%, 65.1%); /* --ring */
+  }
+
+  &[aria-disabled='true'] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.button-text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Variants */
+.default {
+  background-color: hsl(222.2, 47.4%, 11.2%); /* --primary */
+  color: hsl(210, 40%, 98%); /* --primary-foreground */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 32px; /* Match Admission */
+
+  &:hover {
+    background-color: hsl(222.2, 47.4%, 11.2%, 0.9);
+    transform: scale(1.02);
+  }
+
+  .icon {
+    background-color: hsl(0, 0%, 100%); /* White for Admission */
+    color: hsl(222.2, 47.4%, 11.2%); /* Black icon */
+  }
+}
+
+.destructive {
+  background-color: hsl(0, 100%, 50%); /* --destructive */
+  color: hsl(210, 40%, 98%); /* --destructive-foreground */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: hsl(0, 100%, 50%, 0.9);
+    transform: scale(1.02);
+  }
+}
+
+.outline {
+  background-color: hsl(0, 0%, 100%); /* --background */
+  color: hsl(222.2, 47.4%, 11.2%); /* --foreground */
+  border: 1px solid hsl(214.3, 31.8%, 91.4%); /* --input */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: hsl(210, 40%, 96.1%); /* --accent */
+    color: hsl(222.2, 47.4%, 11.2%); /* --accent-foreground */
+    transform: scale(1.02);
+  }
+
+  .icon {
+    background-color: hsl(222.2, 47.4%, 11.2%); /* Black for ProductionCenter */
+    color: hsl(210, 40%, 98%); /* White icon */
+  }
+}
+
+.secondary {
+  background-color: hsl(210, 40%, 96.1%); /* --secondary */
+  color: hsl(222.2, 47.4%, 11.2%); /* --secondary-foreground */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: hsl(210, 40%, 96.1%, 0.8);
+    transform: scale(1.02);
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: hsl(222.2, 47.4%, 11.2%);
+
+  &:hover {
+    background-color: hsl(210, 40%, 96.1%);
+    color: hsl(222.2, 47.4%, 11.2%);
+    transform: scale(1.02);
+  }
+}
+
+.link {
+  background-color: transparent;
+  color: hsl(222.2, 47.4%, 11.2%);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  &:hover {
+    text-decoration: underline;
+    transform: scale(1.02);
+  }
+}
+
+/* Sizes */
+.default {
+  height: 48px; /* Match ProductionCenter */
+  padding: 4px 24px 4px 24px;
+}
+
+.sm {
+  height: 32px;
+  padding: 4px 12px;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: -0.12px;
+}
+
+.lg {
+  height: 64px; /* Match Admission */
+  padding: 4px 32px 4px 24px;
+  font-size: 20px; /* Match Admission */
+  line-height: 28px;
+  letter-spacing: -0.2px;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .link-button {
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: -0.14px;
+  }
+
+  .default {
+    height: 40px;
+    padding: 4px 16px;
+  }
+
+  .sm {
+    height: 28px;
+    padding: 4px 10px;
+    font-size: 10px;
+    line-height: 20px;
+  }
+
+  .lg {
+    height: 48px;
+    padding: 4px 24px 4px 16px;
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .icon {
+    height: 32px;
+    width: 32px;
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      padding: 8px;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

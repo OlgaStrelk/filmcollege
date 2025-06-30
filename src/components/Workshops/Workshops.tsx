@@ -4,6 +4,7 @@ import workshopsData from "../../data/workshops.json";
 interface Workshop {
   title: string;
   image: string;
+  icon: string;
 }
 const workshops: Workshop[] = workshopsData;
 
@@ -13,7 +14,7 @@ const Workshops: React.FC = () => (
     <div className={styles["workshop-grid"]}>
       {workshops.map((workshop, index) => (
         <div className={styles["workshop-item"]} key={index}>
-          <div className={styles["workshop-icon"]}></div>
+          <img className={styles["workshop-icon"]} src={workshop.icon}></img>
           <div className={styles.title}>{workshop.title}</div>
           <div
             className={styles["hover-image"]}

@@ -1,8 +1,8 @@
 [
-  { "title": "Актер", "image": "/images/actor.jpg" },
-  { "title": "Сценарист", "image": "/images/screenwriter.jpg" },
-  { "title": "Режиссер", "image": "/images/director.jpg" },
-  { "title": "Режиссер монтажа", "image": "/images/editor.jpg" },
-  { "title": "Звукорежиссер", "image": "/images/soundengineer.jpg" },
-  { "title": "Оператор", "image": "/images/operator.jpg" }
+  { "title": "Актер", "image": "/images/actor.jpg", "icon": "/icons/workshop/icon1.svg" },
+  { "title": "Сценарист", "image": "/images/screenwriter.jpg", "icon": "/icons/workshop/icon2.svg" },
+  { "title": "Режиссер", "image": "/images/director.jpg", "icon": "/icons/workshop/icon3.svg" },
+  { "title": "Режиссер монтажа", "image": "/images/editor.jpg", "icon": "/icons/workshop/icon4.svg" },
+  { "title": "Звукорежиссер", "image": "/images/soundengineer.jpg", "icon": "/icons/workshop/icon5.svg" },
+  { "title": "Оператор", "image": "/images/operator.jpg", "icon": "/icons/workshop/icon6.svg" }
 ]
