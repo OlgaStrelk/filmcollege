@@ -1,24 +1,26 @@
 .faculty-section {
+  margin: 80px auto;
+  max-width: 1320px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  margin: 80px 0;
 
   .container {
     position: relative;
     width: 100%;
     border-radius: 42px 42px 50px 50px;
     overflow: hidden;
-    background-color: #efeeea;
+    background-color: transparent;
+    max-width: 1320px;
   }
 
   .faculty-background {
-    height: 424px;
+    height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: -1;
   }
 
@@ -26,7 +28,14 @@
     display: flex;
     height: 80px;
     width: 100%;
-    background: linear-gradient(to bottom, transparent 0%, transparent 50%, #191919 50%, #191919 100%);
+    background: linear-gradient(
+      to bottom,
+      #efeeea 0%,
+      #efeeea 50%,
+      transparent 50%,
+      transparent 100%
+    );
+    // overflow: hidden;
   }
 
   .faculty-tab {
@@ -41,14 +50,13 @@
     text-align: center;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    // transition: all 0.3s ease;
     border-radius: 42px 42px 0 0;
 
     &.active {
-      background-color: #191919;
+      background:#191919;
       color: #efeeea;
       font-weight: 500;
-      border-radius: 42px 42px 0 0;
     }
   }
 
@@ -71,6 +79,7 @@
     }
     .faculty-tab:nth-child(1) {
       border-radius: 42px 42px 50px 0;
+
     }
     .faculty-tab:nth-child(3) {
       border-radius: 42px 42px 0 50px;
@@ -81,7 +90,12 @@
     .faculty-tab:nth-child(3) {
       &.active {
         border-radius: 42px 42px 0 0;
+        background: linear-gradient(to top, transparent 7%, #191919 30%) 0 bottom / 100% 120px no-repeat;
       }
+    }
+    .faculty-tab:nth-child(1) {
+      height: 130px;
+      padding-bottom: 50px;
     }
     .faculty-tab:nth-child(2) {
       border-radius: 42px 42px 50px 0;
@@ -94,21 +108,16 @@
     gap: 20px;
     padding: 20px;
     border-radius: 0 0 50px 50px;
-    background-color: #191919;
-
-    h3 {
-      font-size: 48px;
-      font-weight: 400;
-      letter-spacing: -0.96px;
-      line-height: 120%;
-      color: #efeeea;
-      margin: 0;
-    }
+    background: linear-gradient(to right, #191919 40%, transparent 30%);
+    // background-color: #191919;
+    position: relative;
+    // z-index: -2;
 
     p {
+      padding: 30px 0;
       font-size: 20px;
       font-weight: 300;
-      line-height: 140%;
+      line-height: 1.4;
       letter-spacing: 0;
       color: #efeeea;
       max-width: 835px;
@@ -168,11 +177,6 @@
     .faculty-content {
       padding: 16px;
 
-      h3 {
-        font-size: 36px;
-        letter-spacing: -0.72px;
-      }
-
       p {
         font-size: 16px;
         line-height: 22.4px;
@@ -181,3 +185,5 @@
     }
   }
 }
+
+

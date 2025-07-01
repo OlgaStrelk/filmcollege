@@ -53,15 +53,17 @@ const Admission: React.FC = () => (
           <div className={styles["font-l"]}>{admission.note}</div>
         </div>
       </div>
+      {/* <div className={styles['button-container']}> */}
       <LinkButton
         variant="default"
         size="lg"
-        icon={admission.buttonIcon}
+        icon="/icons/link_white.svg"
         href="#"
       >
         {admission.buttonText}
       </LinkButton>
     </div>
+    {/* </div> */}
   </section>
 );
 

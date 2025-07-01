@@ -1,12 +1,17 @@
 .events {
-
-  margin: 80px 0;
+  margin: 80px auto;
+  max-width: 1320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .events-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 434px));
-  justify-content: space-between;
-  gap: 10px;
+    margin-top: 40px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 434px));
+    justify-content: space-between;
+    gap: 10px;
   }
 
   .event-card {
@@ -49,6 +54,7 @@
   }
 
   .all-events-btn {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
   }

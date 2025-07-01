@@ -1,5 +1,6 @@
 .workshops {
-  padding: 80px 16px;
+  max-width: 1320px;
+  margin: 80px auto;
   display: flex;
   gap: 30px;
   justify-content: space-between;
@@ -12,23 +13,78 @@
     gap: 16px;
   }
 
+  .card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: center center / contain url("/icons/card-overlay.svg") no-repeat;
+    z-index: 0;
+  }
+
   .workshop-item {
     position: relative;
     max-width: 318px;
     width: 100%;
     aspect-ratio: 318 / 240;
-    background: center center / contain url("/icons/card-overlay.svg") no-repeat;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease;
-
-    &:hover {
-    }
   }
 
   .workshop-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 54px;
     height: 54px;
+    z-index: 2;
+    transition: content 0.3s ease;
+  }
+
+  .workshop-icon-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 54px;
+    height: 54px;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
+
+  .workshop-item:hover .workshop-icon {
+    opacity: 0;
+  }
+
+  .workshop-item:hover .workshop-icon-hover {
+    opacity: 1;
+  }
+
+  .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    -webkit-mask-image: url("/icons/card-overlay.svg");
+    mask-image: url("/icons/card-overlay.svg");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+
+  .workshop-item:hover .hover-image {
+    opacity: 1;
+  }
+    .workshop-item:hover .title {
+    color: #EFEEEA;
   }
 
   .title {
@@ -41,5 +97,7 @@
     line-height: 1.2;
     letter-spacing: -1%;
     vertical-align: bottom;
+    z-index: 3;
+    color:#191919;
   }
 }

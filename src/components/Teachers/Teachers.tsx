@@ -1,6 +1,7 @@
 import styles from "./Teachers.module.scss";
 import teachersData from "../../data/teachers.json";
 import { useEffect, useMemo } from "react";
+import { LinkButton } from "../../ui/LinkButton";
 
 interface Teacher {
   name: string;
@@ -47,6 +48,16 @@ const Teachers: React.FC = () => {
             </div>
           ))}
         </div>
+      </div>
+      <div className={styles["button-container"]}>
+        <LinkButton
+          variant="default"
+          size="lg"
+          icon="icons/link_white.svg"
+          href="#"
+        >
+          Все преподаватели
+        </LinkButton>
       </div>
     </section>
   );

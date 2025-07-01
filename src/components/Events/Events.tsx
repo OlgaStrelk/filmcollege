@@ -42,7 +42,7 @@ const Events: React.FC = () => (
       <LinkButton
         variant="default"
         size="default"
-        icon={events.buttonIcon}
+        icon="/icons/link_white.svg"
         href={events.buttonUrl}
       >
         {events.buttonText}

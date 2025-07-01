@@ -32,11 +32,7 @@ const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
       {...props}
     >
       {children && <span className={styles["button-text"]}>{children}</span>}
-      {icon && (
-        <span className={styles.icon}>
-          <img src={icon} alt="Link icon" />
-        </span>
-      )}
+      {icon && <img src={icon} alt="Link icon" />}
     </a>
   ),
 );

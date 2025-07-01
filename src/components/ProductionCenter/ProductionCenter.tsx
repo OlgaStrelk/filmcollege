@@ -17,14 +17,16 @@ const ProductionCenter: React.FC = () => (
     <div className={styles.container}>
       <h2>{productionCenter.title}</h2>
       <p>{productionCenter.description}</p>
-      <LinkButton
-        variant="outline"
-        size="default"
-        icon={productionCenter.buttonIcon}
-        href={productionCenter.linkUrl}
-      >
-        {productionCenter.buttonText}
-      </LinkButton>
+      <div className={styles["buttons-container"]}>
+        <LinkButton
+          variant="outline"
+          size="default"
+          icon="/icons/link.svg"
+          href={productionCenter.linkUrl}
+        >
+          {productionCenter.buttonText}
+        </LinkButton>
+      </div>
     </div>
   </section>
 );

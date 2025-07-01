@@ -7,9 +7,8 @@ interface FacultyContent {
   id: string;
   title: string;
   description: string;
-  linkText: string;
-  linkIcon: string;
   linkUrl: string;
+  backgroundImage: string;
 }
 
 const typedFaculties: FacultyContent[] = facultiesData;
@@ -26,7 +25,7 @@ const Faculties: React.FC = () => {
         <img
           className={styles["faculty-background"]}
           alt="Faculty background"
-          src="https://c.animaapp.com/mcixopytg2MdNB/img/union.png"
+          src={currentFaculty.backgroundImage}
         />
         <div className={styles["faculty-tabs"]} data-active={activeFaculty}>
           {typedFaculties.map((faculty) => (
@@ -40,15 +39,14 @@ const Faculties: React.FC = () => {
           ))}
         </div>
         <div className={styles["faculty-content"]}>
-          <h3>{currentFaculty.title}</h3>
           <p>{currentFaculty.description}</p>
           <LinkButton
             variant="outline"
             size="lg"
-            icon={currentFaculty.linkIcon}
             href={currentFaculty.linkUrl}
+            icon="/icons/link.svg"
           >
-            {currentFaculty.linkText}
+            Подробнее о факультете
           </LinkButton>
         </div>
       </div>
