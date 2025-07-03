@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styles from "./Faculties.module.scss";
 import { LinkButton } from "../../ui/LinkButton";
 import Link from "../../icons/link.svg?react";
+import Actors from "../../assets/images/faculties/actors.png";
+import Cinema from "../../assets/images/faculties/cinema.png";
+import General from "../../assets/images/faculties/general.png";
 
 interface FacultyContent {
   id: string;
@@ -18,7 +21,7 @@ const typedFaculties: FacultyContent[] = [
     description:
       "Актёрский факультет сочетает прохождение классической театральной школы, погружение в специфику кино и освоение методов преподавания актёрского мастерства. Подготовка актёров, способных работать в киноиндустрии, на телевидении, в современных цифровых форматах (сериалы, веб-проекты), театре, образовании, психологии, арт-терапии.",
     linkUrl: "#",
-    backgroundImage: "/images/faculties/actors.png",
+    backgroundImage: Actors,
   },
   {
     id: "film",
@@ -26,7 +29,7 @@ const typedFaculties: FacultyContent[] = [
     description:
       "Кинофакультет готовит профессионалов киноиндустрии, способных создавать кинопроекты разных жанров и масштабов. В программе факультета — изучение выразительных средств кино, исследование языка кино, освоение современных технологий кинопроизводства, изучение профессии в одной из пяти мастерских, работа над кинопроектами в творческих командах, производственная практика в кинопродакшенах.",
     linkUrl: "#",
-    backgroundImage: "/images/faculties/cinema.png",
+    backgroundImage: Cinema,
   },
   {
     id: "general",
@@ -34,7 +37,7 @@ const typedFaculties: FacultyContent[] = [
     description:
       "Особенности образовательной системы Нового Киноколледжа — углублённое преподавание гуманитарных предметов: истории искусств (изобразительного искусства, музыки, театра, кино), философии, психологии, истории религий; развитие учебных навыков; психологическая подготовка к творческой профессии (навыки рефлексии, работы с эмоциями и чувствами); практика в социальных проектах и экспедициях.",
     linkUrl: "#",
-    backgroundImage: "/images/faculties/general.png",
+    backgroundImage: General,
   },
 ];
 

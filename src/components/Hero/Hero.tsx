@@ -2,6 +2,8 @@ import { LinkButton } from "../../ui/LinkButton";
 import styles from "./Hero.module.scss";
 import ArrowRightBlack from "../../icons/arrow-right-black.svg?react";
 
+import HeroVideo from "../../assets/videos/hero-video.mov";
+
 interface HeroData {
   video: string;
   title: string;
@@ -11,7 +13,7 @@ interface HeroData {
 }
 
 const hero: HeroData = {
-  video: "/videos/hero-video.mov",
+  video: HeroVideo,
   title: "Новый киноколледж — среда, где человек раскрывается как автор",
   subtitle: "Учеба как рост, кино как язык",
   buttonText: "Записаться",

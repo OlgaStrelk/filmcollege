@@ -3,6 +3,34 @@ import { useEffect, useMemo, useState } from "react";
 import { LinkButton } from "../../ui/LinkButton";
 import WhiteLink from "../../icons/link_white.svg?react";
 
+import OlgaKerzina from "../../assets/images/team_photo/olga_kerzina.png";
+import EvgeniyGoryainov from "../../assets/images/team_photo/evgeniy_goryainov.png";
+import VyacheslavIvanov from "../../assets/images/team_photo/vyacheslav_ivanov.png";
+import ArseniyKolmykov from "../../assets/images/team_photo/arseniy_kolmykov.png";
+import GabrielaSelivanova from "../../assets/images/team_photo/gabriela_selivanova.png";
+import SergeyPetrov from "../../assets/images/team_photo/sergey_petrov.png";
+import RomanLapin from "../../assets/images/team_photo/roman_lapin.png";
+import SemyonYakovlev from "../../assets/images/team_photo/semyon_yakovlev.png";
+import OlgaLipman from "../../assets/images/team_photo/olga_lipman.png";
+import VeraPopova from "../../assets/images/team_photo/vera_popova.png";
+import AlekseySuharev from "../../assets/images/team_photo/aleksey_suharev.png";
+import AlesyaVelyaminova from "../../assets/images/team_photo/alesya_velyaminova.png";
+import AnzhelikaKatysheva from "../../assets/images/team_photo/anzhelika_katysheva.png";
+import AlekseyMartynov from "../../assets/images/team_photo/aleksey_martynov.png";
+import VeraDorohina from "../../assets/images/team_photo/vera_dorohina.png";
+import AnnaSavranskaya from "../../assets/images/team_photo/anna_savranskaya.png";
+import VeraElnikova from "../../assets/images/team_photo/vera_elnikova.png";
+import AndreySkripskiy from "../../assets/images/team_photo/andrey_skripskiy.png";
+import NinaGromyko from "../../assets/images/team_photo/nina_gromyko.png";
+import MariyaPonomareva from "../../assets/images/team_photo/mariya_ponomareva.png";
+import MarinaVasina from "../../assets/images/team_photo/marina_vasina.png";
+import AlexandraKozlova from "../../assets/images/team_photo/aleksandra_kozlova.png";
+import VladimirGolovnyak from "../../assets/images/team_photo/vladimir_golovnyak.png";
+import YuriyVasilev from "../../assets/images/team_photo/yuriy_vasilev.png";
+import LadaFisher from "../../assets/images/team_photo/lada_fisher.png";
+import MikaLipman from "../../assets/images/team_photo/mika_lipman.png";
+import AndreyKorostelev from "../../assets/images/team_photo/andrey_korostelev.png";
+
 interface Teacher {
   name: string;
   role: string;
@@ -13,137 +41,137 @@ const teachersData: Teacher[] = [
   {
     name: "Ольга Керзина",
     role: "Директор, руководитель кинофакультета, педагог по истории мировых религий",
-    image: "/images/team_photo/olga_kerzina.png",
+    image: OlgaKerzina,
   },
   {
     name: "Евгений Горяинов",
     role: 'Руководитель мастерской "Звукорежиссёр", педагог по звукорежиссуре',
-    image: "/images/team_photo/evgeniy_goryainov.png",
+    image: EvgeniyGoryainov,
   },
   {
     name: "Вячеслав Иванов",
     role: 'Руководитель мастерской "Режиссёр", педагог по истории и языку кино, современному кино и кинопроизводству',
-    image: "/images/team_photo/vyacheslav_ivanov.png",
+    image: VyacheslavIvanov,
   },
   {
     name: "Арсений Колмыков",
     role: 'Руководитель мастерской "Режиссёр монтажа", педагог по монтажу и кинопроизводству',
-    image: "/images/team_photo/arseniy_kolmykov.png",
+    image: ArseniyKolmykov,
   },
   {
     name: "Габриела Селиванова",
     role: 'Руководитель мастерской "Сценарист", педагог по истории и теории кино, координатор образовательной программы кинофакультета',
-    image: "/images/team_photo/gabriela_selivanova.png",
+    image: GabrielaSelivanova,
   },
   {
     name: "Сергей Петров",
     role: 'Со-руководитель мастерской "Режиссёр монтажа", педагог по монтажу, куратор производственной практики',
-    image: "/images/team_photo/sergey_petrov.png",
+    image: SergeyPetrov,
   },
   {
     name: "Роман Лапин",
     role: "Педагог по режиссуре кино и кинодраматургии",
-    image: "/images/team_photo/roman_lapin.png",
+    image: RomanLapin,
   },
   {
     name: "Семён Яковлев",
     role: 'Руководитель мастерской "Кинооператор", педагог по операторскому мастерству',
-    image: "/images/team_photo/semyon_yakovlev.png",
+    image: SemyonYakovlev,
   },
   {
     name: "Ольга Липман",
     role: "Заместитель директора, руководитель актёрского факультета, психолог",
-    image: "/images/team_photo/olga_lipman.png",
+    image: OlgaLipman,
   },
   {
     name: "Вера Попова",
     role: "Педагог по актёрскому мастерству",
-    image: "/images/team_photo/vera_popova.png",
+    image: VeraPopova,
   },
   {
     name: "Алексей Сухарев",
     role: "Педагог по классическому танцу и сценическому движению",
-    image: "/images/team_photo/aleksey_suharev.png",
+    image: AlekseySuharev,
   },
   {
     name: "Алеся Вельяминова",
     role: "Продюсер проектно-продюсерского центра, педагог по продюсированию, партнёр колледжа по производственной практике",
-    image: "/images/team_photo/alesya_velyaminova.png",
+    image: AlesyaVelyaminova,
   },
   {
     name: "Анжелика Катышева",
     role: "Педагог по актёрскому мастерству",
-    image: "/images/team_photo/anzhelika_katysheva.png",
+    image: AnzhelikaKatysheva,
   },
   {
     name: "Алексей Мартынов",
     role: "Педагог по актёрскому мастерству",
-    image: "/images/team_photo/aleksey_martynov.png",
+    image: AlekseyMartynov,
   },
   {
     name: "Вера Дорохина",
     role: "Педагог по актёрскому мастерству",
-    image: "/images/team_photo/vera_dorohina.png",
+    image: VeraDorohina,
   },
   {
     name: "Анна Савранская",
     role: "Педагог по актёрскому мастерству",
-    image: "/images/team_photo/anna_savranskaya.png",
+    image: AnnaSavranskaya,
   },
   {
     name: "Вера Ельникова",
     role: "Педагог по сценической речи",
-    image: "/images/team_photo/vera_elnikova.png",
+    image: VeraElnikova,
   },
   {
     name: "Андрей Скрипский",
     role: "Преподаватель психологии, естествознания, ОБЖ",
-    image: "/images/team_photo/andrey_skripskiy.png",
+    image: AndreySkripskiy,
   },
   {
     name: "Нина Громыко",
     role: "Преподаватель философии",
-    image: "/images/team_photo/nina_gromyko.png",
+    image: NinaGromyko,
   },
   {
     name: "Мария Пономарева",
     role: "Преподаватель философии",
-    image: "/images/team_photo/mariya_ponomareva.png",
+    image: MariyaPonomareva,
   },
   {
     name: "Марина Васина",
     role: "Преподаватель истории изобразительного искусства и рисунка",
-    image: "/images/team_photo/marina_vasina.png",
+    image: MarinaVasina,
   },
   {
     name: "Александра Козлова",
     role: "Преподаватель английского и испанского языков",
-    image: "/images/team_photo/aleksandra_kozlova.png",
+    image: AlexandraKozlova,
   },
   {
     name: "Владимир Головняк",
     role: "Преподаватель математики, физики и информатики",
-    image: "/images/team_photo/vladimir_golovnyak.png",
+    image: VladimirGolovnyak,
   },
   {
     name: "Юрий Васильев",
     role: "Преподаватель философии и истории",
-    image: "/images/team_photo/yuriy_vasilev.png",
+    image: YuriyVasilev,
   },
   {
     name: "Лада Фишер",
     role: "Преподаватель математики",
-    image: "/images/team_photo/lada_fisher.png",
+    image: LadaFisher,
   },
   {
     name: "Мика Липман",
     role: "Продюсер проектно-продюсерского центра, педагог по продюсированию, партнёр колледжа по производственной практике",
-    image: "/images/team_photo/mika_lipman.png",
+    image: MikaLipman,
   },
   {
     name: "Андрей Коростелев",
     role: "Продюсер проектно-продюсерского центра, руководитель производственной практики, педагог по продюсированию",
-    image: "/images/team_photo/andrey_korostelev.png",
+    image: AndreyKorostelev,
   },
 ];
 const Teachers: React.FC = () => {
