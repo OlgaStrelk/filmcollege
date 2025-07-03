@@ -1,4 +1,6 @@
+import { LinkButton } from "../../ui/LinkButton";
 import styles from "./Hero.module.scss";
+import ArrowRightBlack from "../../icons/arrow-right-black.svg?react";
 
 interface HeroData {
   video: string;
@@ -34,10 +36,14 @@ const Hero: React.FC = () => (
       <h1>{hero.title}</h1>
       <p>{hero.subtitle}</p>
       <div className={styles["hero-buttons"]}>
-        <a href={hero.buttonUrl} className={styles["hero-button"]}>
+        <LinkButton
+          href={hero.buttonUrl}
+          icon={ArrowRightBlack}
+          variant="outline"
+          size="default"
+        >
           <span className={styles["button-text"]}>{hero.buttonText}</span>
-          <div className={styles["button-icon"]} />
-        </a>
+        </LinkButton>
       </div>
     </div>
   </section>

@@ -19,7 +19,7 @@ const about: AboutData = {
 };
 
 const About: React.FC = () => (
-  <section className={styles.about}>
+  <section className={styles.about} id="about">
     <h2>{about.title}</h2>
     <div className={styles["about-container"]}>
       <div className={styles["about-content"]}>

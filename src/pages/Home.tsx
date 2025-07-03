@@ -4,7 +4,6 @@ import { ProductionCenter } from "../components/ProductionCenter";
 import { About } from "../components/About";
 import { Teachers } from "../components/Teachers";
 import { Admission } from "../components/Admission";
-import { Events } from "../components/Events";
 import { Faculties } from "../components/Faculties";
 
 const Home: React.FC = () => {
@@ -17,7 +16,7 @@ const Home: React.FC = () => {
       <Teachers />
       <Admission />
       <ProductionCenter />
-      <Events />
+      {/* <Events /> */}
     </>
   );
 };

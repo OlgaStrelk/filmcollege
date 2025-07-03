@@ -47,7 +47,7 @@ const admission: AdmissionData = {
 };
 
 const Admission: React.FC = () => (
-  <section className={styles.admission}>
+  <section className={styles.admission} id="admission">
     <div className={styles["admission-container"]}>
       <div className={styles["content-wrapper"]}>
         <div className={styles["main-content"]}>

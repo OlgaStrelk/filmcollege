@@ -1,5 +1,11 @@
 import styles from "./Workshops.module.scss";
 import { Link } from "react-router-dom";
+import ActorImage from "/images/workshops/actor.png";
+import ScreenwriterImage from "/images/workshops/screenwriter.png";
+import DirectorImage from "/images/workshops/director.png";
+import EditorImage from "/images/workshops/editor.png";
+import SoundengineerImage from "/images/workshops/soundengineer.png";
+import CinematographerImage from "/images/workshops/cinematographer.png";
 
 interface Workshop {
   title: string;
@@ -10,32 +16,32 @@ interface Workshop {
 const workshops: Workshop[] = [
   {
     title: "Актер",
-    image: "/images/workshops/actor.png",
+    image: ActorImage,
     icon: "/icons/workshop/icon1.svg",
   },
   {
     title: "Сценарист",
-    image: "/images/workshops/screenwriter.png",
+    image: ScreenwriterImage,
     icon: "/icons/workshop/icon2.svg",
   },
   {
     title: "Режиссер",
-    image: "/images/workshops/director.png",
+    image: DirectorImage,
     icon: "/icons/workshop/icon3.svg",
   },
   {
     title: "Режиссер монтажа",
-    image: "/images/workshops/editor.png",
+    image: EditorImage,
     icon: "/icons/workshop/icon4.svg",
   },
   {
     title: "Звукорежиссер",
-    image: "/images/workshops/soundengineer.png",
+    image: SoundengineerImage,
     icon: "/icons/workshop/icon5.svg",
   },
   {
     title: "Оператор",
-    image: "/images/workshops/cinematographer.png",
+    image: CinematographerImage,
     icon: "/icons/workshop/icon6.svg",
   },
 ];

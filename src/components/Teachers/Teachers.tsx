@@ -166,7 +166,7 @@ const Teachers: React.FC = () => {
     }
   }, [teachers.length]);
   return (
-    <section className={styles.teachers}>
+    <section className={styles.teachers} id="teachers">
       <div className={styles.container}>
         <h2>Педагоги и сотрудники</h2>
         <div className={styles["teachers-carousel"]}>

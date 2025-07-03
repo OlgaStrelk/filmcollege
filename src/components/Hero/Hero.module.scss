@@ -72,21 +72,7 @@
         color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
         transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      .button-icon {
-        width: 40px;
-        height: 40px;
-        background: right center / contain url("/icons/arrow-icon.svg");
-      }
-      &:hover {
-        background: linear-gradient(to right, #191919, #2e2e2e);
-        color: #efeeea;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transform: scale(1.05);
 
-        .button-icon {
-          filter: invert(100%);
-        }
       }
     }
   }
-}

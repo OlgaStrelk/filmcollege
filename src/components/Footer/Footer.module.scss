@@ -10,7 +10,6 @@
   flex-direction: column;
   gap: 40px;
   padding: 60px 40px;
-  width: 100%;
 }
 
 .divider {
@@ -161,30 +160,6 @@
 
   .icon {
     font-size: 14px;
-  }
-}
-
-.contact-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 207px;
-  height: 38px;
-  padding: 3px 20px;
-  background-color: #efeeea;
-  border: 1px solid #19191926;
-  border-radius: 23.75px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #191919;
-  text-align: center;
-  letter-spacing: -0.14px;
-  line-height: 28px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: #e5e4e0;
   }
 }
 

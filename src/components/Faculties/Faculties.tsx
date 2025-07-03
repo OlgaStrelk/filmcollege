@@ -45,7 +45,7 @@ const Faculties: React.FC = () => {
     typedFaculties[0];
 
   return (
-    <section className={styles["faculty-section"]}>
+    <section className={styles["faculty-section"]} id="faculties">
       <div className={styles.container}>
         <img
           className={styles["faculty-background"]}

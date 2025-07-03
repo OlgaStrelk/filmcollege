@@ -1,21 +1,29 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 import { useEffect, useState } from "react";
+import { LinkButton } from "../../ui/LinkButton";
+import Logo from "../../icons/logo.svg?react";
+import ScrollLink from "../ScrollLink/ScrollLink";
 
 interface NavLinkItem {
   title: string;
   path: string;
 }
 
+// const navLinksTyped: NavLinkItem[] = [
+//   { title: "О нас", path: "/about" },
+//   { title: "Педагоги и сотрудники", path: "/teachers" },
+//   { title: "Факультеты", path: "/faculties" },
+//   { title: "Поступление", path: "/admission" },
+//   { title: "События", path: "/events" },
+// ];
 const navLinksTyped: NavLinkItem[] = [
-  { title: "О нас", path: "/about" },
-  { title: "Педагоги и сотрудники", path: "/teachers" },
-  { title: "Факультеты", path: "/faculties" },
-  { title: "Поступление", path: "/admission" },
-  { title: "События", path: "/events" },
-  { title: "Связаться с нами", path: "/contact" },
+  { title: "О нас", path: "#about" },
+  { title: "Педагоги и сотрудники", path: "#teachers" },
+  { title: "Факультеты", path: "#faculties" },
+  { title: "Поступление", path: "#admission" },
+  // { title: "События", path: "#events" },
 ];
-
 const Header: React.FC = () => {
   const [isHeroVisible, setIsHeroVisible] = useState(true);
 
@@ -34,25 +42,33 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    // <header>
     <header
       className={`${styles.header} ${isHeroVisible ? styles["hero-state"] : styles["default-state"]}`}
     >
       <div className={styles["header-content"]}>
-        <NavLink to="/" className={styles.logo}>
-          <img
-            src="/logo.svg"
-            alt="Новый Киноколледж"
-            width="140"
-            height="38"
-          />
+        <NavLink to="/" className={styles["logo-link"]}>
+          <Logo className={styles.logo} width="140" height="38" />
         </NavLink>
         <div className={styles["nav-links"]}>
           {navLinksTyped.map((link, index) => (
-            <NavLink key={index} to={link.path} className={styles["nav-link"]}>
+            // <NavLink key={index} to={link.path} className={styles["nav-link"]}>
+            //   {link.title}
+            // </NavLink>
+            <ScrollLink
+              key={index}
+              to={link.path}
+              className={styles["nav-link"]}
+            >
               {link.title}
-            </NavLink>
+            </ScrollLink>
           ))}
+          <LinkButton
+            variant="outline"
+            size="sm"
+            href="https://t.me/+11Tx3t59WzNkODBi"
+          >
+            Связаться с нами
+          </LinkButton>
         </div>
       </div>
     </header>
