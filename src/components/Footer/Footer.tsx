@@ -1,19 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Footer.module.scss";
-import Divider from "../../icons/line-1.svg?react";
-import Logo from "../../icons/logo.svg?react";
-import DocumentIcon from "../../icons/document.svg?react";
-import ExpandIcon from "../../icons/arrow-down.svg?react";
-import VkIcon from "../../icons/vk.svg?react";
-import TelegramIcon from "../../icons/telegram.svg?react";
-import { Link } from "react-router-dom";
 
 interface Document {
   name: string;
   files: string[];
 }
 
-const documentsData: Document[] = [
+const documents: Document[] = [
   {
     name: "Основные сведения",
     files: ["osnovnye_svedeniya.pdf"],
@@ -72,129 +65,55 @@ const documentsData: Document[] = [
 ];
 
 const Footer: React.FC = () => {
-  const [documents, setDocuments] = useState<Document[]>(documentsData);
-  const [openDropdownIndex, setOpenDropdownIndex] = useState<number | null>(
-    null,
-  );
-  const dropdownRefs = useRef<(HTMLDivElement | null)[]>([]);
-  useEffect(() => {
-    // Имитация загрузки данных (для API в будущем)
-    setDocuments(documentsData);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        dropdownRefs.current.every(
-          (ref) => ref && !ref.contains(event.target as Node),
-        )
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
       ) {
-        setOpenDropdownIndex(null);
+        setIsDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const socialLinks = [
-    { name: "VK", icon: VkIcon, url: "#" },
-    { name: "Telegram", icon: TelegramIcon, url: "#" },
-  ];
-
   return (
     <footer className={styles.footer}>
       <div className={styles["footer-content"]}>
-        <Divider className={styles.divider} />
-        <div className={styles["footer-main"]}>
-          <div className={styles["footer-logo"]}>
-            <Logo
-              className={styles["logo-image"]}
-              aria-label="Логотип Нового Киноколледжа"
-            />
-          </div>
-
-          <div className={styles["footer-contacts"]}>
-            <h3 className={styles["contacts-title"]}>Контакты</h3>
-            <a
-              href="mailto:info@filmcollege.ru"
-              className={styles.email}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              info@filmcollege.ru
-            </a>
-          </div>
-
-          <div className={styles["documents-container"]}>
-            {documents.map((doc, index) => (
-              <div
-                key={index}
-                className={`${styles["dropdown-container"]} ${
-                  openDropdownIndex === index ? styles["is-open"] : ""
-                }`}
-                ref={(el: HTMLDivElement | null) => {
-                  dropdownRefs.current[index] = el;
-                }}
-                onClick={() =>
-                  setOpenDropdownIndex(
-                    openDropdownIndex === index ? null : index,
-                  )
-                }
+        <div className={styles["footer-info"]}>
+          <div className={styles["footer-logo"]}>НОВЫЙ КИНОКОЛЛЕДЖ</div>
+          <div className={styles["footer-links"]}>
+            <a href="#">Контакты</a>
+            <div className={styles["dropdown-container"]} ref={dropdownRef}>
+              <button
+                className={styles["dropdown-toggle"]}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
-                <div className={styles["dropdown-toggle"]}>
-                  <DocumentIcon className={styles["document-icon"]} />
-                  <div className={styles["dropdown-title"]}>{doc.name}</div>
-                  <ExpandIcon
-                    className={`${styles["expand-icon"]} ${
-                      openDropdownIndex === index ? styles["rotate-icon"] : ""
-                    }`}
-                  />
+                Документы и сведения об образовательной организации
+              </button>
+              {isDropdownOpen && (
+                <div className={styles.dropdown}>
+                  {documents.map((doc, index) => (
+                    <a
+                      key={index}
+                      href={`/docs/${doc.files[0]}`}
+                      className={styles["dropdown-item"]}
+                    >
+                      {doc.name}
+                      <span className={styles.icon}>
+                        <i className="fas fa-link"></i>
+                      </span>
+                    </a>
+                  ))}
                 </div>
-                {openDropdownIndex === index && (
-                  <div className={styles.dropdown}>
-                    {doc.files.map((file, fileIndex) => (
-                      <a
-                        key={fileIndex}
-                        href={`/docs/${file}`}
-                        className={styles["dropdown-item"]}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {file}
-                        <span className={styles.icon}>
-                          <i className="fas fa-link"></i>
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+              )}
+            </div>
           </div>
-
-          <Link
-            to="https://t.me/+11Tx3t59WzNkODBi"
-            className={styles["contact-button"]}
-          >
-            <span>Связаться с нами</span>
-          </Link>
-        </div>
-
-        <div className={styles["footer-bottom"]}>
-          <p className={styles.copyright}>Новый киноколледж, 2025</p>
-          <div className={styles["social-links"]}>
-            {socialLinks.map((link, index) => {
-              const Icon = link.icon;
-              return (
-                <a
-                  key={index}
-                  href={link.url}
-                  aria-label={link.name}
-                  className={styles["social-link"]}
-                >
-                  <Icon className={styles["social-icon"]} />
-                </a>
-              );
-            })}
-          </div>
+          <p>info@filmcollege.ru</p>
         </div>
       </div>
     </footer>

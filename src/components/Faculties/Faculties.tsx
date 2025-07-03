@@ -59,7 +59,9 @@ const Faculties: React.FC = () => {
               className={`${styles["faculty-tab"]} ${activeFaculty === faculty.id ? styles.active : ""}`}
               onClick={() => setActiveFaculty(faculty.id)}
             >
-              {faculty.title.toUpperCase()}
+              <span className={styles["faculty-tab-text"]}>
+                {faculty.title.toUpperCase()}
+              </span>{" "}
             </button>
           ))}
         </div>

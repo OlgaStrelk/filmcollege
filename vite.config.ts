@@ -7,10 +7,10 @@ export default defineConfig({
     react(),
     svgr({
       svgrOptions: {
-        icon: true,
+        icon: false,
         svgo: true,
       },
     }),
   ],
-  base: "/filmcollege/",
+  base: "/",
 });

@@ -6,7 +6,7 @@
   gap: 8px;
   white-space: nowrap;
   border-radius: 30px;
-  font-family: 'Geologica', Helvetica, sans-serif;
+  font-family: "Geologica", Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 32px;
@@ -20,7 +20,7 @@
     box-shadow: 0 0 0 1px hsl(215, 20.2%, 65.1%);
   }
 
-  &[aria-disabled='true'] {
+  &[aria-disabled="true"] {
     pointer-events: none;
     opacity: 0.5;
   }
@@ -33,7 +33,7 @@
 
 .default {
   background-color: hsl(222.2, 47.4%, 11.2%);
-  color: hsl(210, 40%, 98%); 
+  color: hsl(210, 40%, 98%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 32px;
 
@@ -43,8 +43,8 @@
   }
 
   .icon {
-    background-color: hsl(0, 0%, 100%); 
-    color: hsl(222.2, 47.4%, 11.2%); 
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(222.2, 47.4%, 11.2%);
   }
 }
 
@@ -65,14 +65,14 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background-color: hsl(210, 40%, 96.1%); 
-    color: hsl(222.2, 47.4%, 11.2%); 
+    background-color: hsl(210, 40%, 96.1%);
+    color: hsl(222.2, 47.4%, 11.2%);
     transform: scale(1.02);
   }
 }
 
 .secondary {
-  background-color: hsl(210, 40%, 96.1%); 
+  background-color: hsl(210, 40%, 96.1%);
   color: hsl(222.2, 47.4%, 11.2%);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
@@ -106,12 +106,12 @@
 }
 
 .default {
-  height: 48px; 
-      img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
+  height: 48px;
+  .link-button-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
 }
 
 .sm {
@@ -122,10 +122,14 @@
 }
 
 .lg {
-  height: 64px; 
-  font-size: 20px; 
+  height: 64px;
+  font-size: 20px;
   line-height: 28px;
   letter-spacing: -0.2px;
+  .link-button-icon {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 .icon {

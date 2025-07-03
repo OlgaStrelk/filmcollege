@@ -16,29 +16,24 @@
   }
 
   .faculty-background {
-    height: 100%;
-    object-fit: cover;
+    width: 100%;
+    object-fit: contain;
     position: absolute;
     top: 0;
-    right: 0;
-    z-index: -1;
-  }
+    left: 0;
+    z-index: 1; 
+    pointer-events: none;  }
 
   .faculty-tabs {
     display: flex;
-    height: 80px;
+    height: 116px;
     width: 100%;
-    background: linear-gradient(
-      to bottom,
-      #efeeea 0%,
-      #efeeea 50%,
-      transparent 50%,
-      transparent 100%
-    );
+    z-index: 2;
     // overflow: hidden;
   }
 
   .faculty-tab {
+    padding-bottom: 25px;
     flex: 1;
     height: 100%;
     background-color: #ffffff;
@@ -54,64 +49,25 @@
     border-radius: 42px 42px 0 0;
 
     &.active {
-      background:#191919;
+      background:transparent;
       color: #efeeea;
       font-weight: 500;
     }
   }
-
-  .faculty-tabs[data-active="acting"] {
-    .faculty-tab:nth-child(1) {
-      &.active {
-        border-radius: 42px 42px 0 0;
-      }
-    }
-    .faculty-tab:nth-child(2) {
-      border-radius: 42px 42px 0 50px;
-    }
-  }
-
-  .faculty-tabs[data-active="film"] {
-    .faculty-tab:nth-child(2) {
-      &.active {
-        border-radius: 42px 42px 0 0;
-      }
-    }
-    .faculty-tab:nth-child(1) {
-      border-radius: 42px 42px 50px 0;
-
-    }
-    .faculty-tab:nth-child(3) {
-      border-radius: 42px 42px 0 50px;
-    }
-  }
-
-  .faculty-tabs[data-active="general"] {
-    .faculty-tab:nth-child(3) {
-      &.active {
-        border-radius: 42px 42px 0 0;
-        background: linear-gradient(to top, transparent 7%, #191919 30%) 0 bottom / 100% 120px no-repeat;
-      }
-    }
-    .faculty-tab:nth-child(1) {
-      height: 130px;
-      padding-bottom: 50px;
-    }
-    .faculty-tab:nth-child(2) {
-      border-radius: 42px 42px 50px 0;
-    }
+  .faculty-tab-text {
+    position: relative;
+    z-index: 3; 
+    display: block;
   }
 
   .faculty-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     border-radius: 0 0 50px 50px;
-    background: linear-gradient(to right, #191919 40%, transparent 30%);
-    // background-color: #191919;
     position: relative;
-    // z-index: -2;
+    z-index: 3;
 
     p {
       padding: 30px 0;
