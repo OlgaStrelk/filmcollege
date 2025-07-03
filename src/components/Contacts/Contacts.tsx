@@ -9,9 +9,9 @@ const Contacts: React.FC = () => (
         поступлении или событиях.
       </p>
       <div className={styles["contact-info"]}>
-        <p>
+        {/* <p>
           <strong>Адрес:</strong> г. Москва, ул Лестева, дом 8 строение 1
-        </p>
+        </p> */}
         <p>
           <strong>Email:</strong>{" "}
           <a href="mailto:info@filmcollege.ru">info@filmcollege.ru</a>
@@ -23,7 +23,10 @@ const Contacts: React.FC = () => (
           <a href="#" className={styles["social-link"]}>
             <i className="fab fa-vk"></i>
           </a>
-          <a href="#" className={styles["social-link"]}>
+          <a
+            href="https://t.me/+11Tx3t59WzNkODBi"
+            className={styles["social-link"]}
+          >
             <i className="fab fa-telegram-plane"></i>
           </a>
         </div>

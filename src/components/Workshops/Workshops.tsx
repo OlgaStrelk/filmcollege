@@ -1,5 +1,4 @@
 import styles from "./Workshops.module.scss";
-import workshopsData from "../../data/workshops.json";
 import { Link } from "react-router-dom";
 
 interface Workshop {
@@ -8,7 +7,38 @@ interface Workshop {
   icon: string;
 }
 
-const workshops: Workshop[] = workshopsData;
+const workshops: Workshop[] = [
+  {
+    title: "Актер",
+    image: "/images/workshops/actor.png",
+    icon: "/icons/workshop/icon1.svg",
+  },
+  {
+    title: "Сценарист",
+    image: "/images/workshops/screenwriter.png",
+    icon: "/icons/workshop/icon2.svg",
+  },
+  {
+    title: "Режиссер",
+    image: "/images/workshops/director.png",
+    icon: "/icons/workshop/icon3.svg",
+  },
+  {
+    title: "Режиссер монтажа",
+    image: "/images/workshops/editor.png",
+    icon: "/icons/workshop/icon4.svg",
+  },
+  {
+    title: "Звукорежиссер",
+    image: "/images/workshops/soundengineer.png",
+    icon: "/icons/workshop/icon5.svg",
+  },
+  {
+    title: "Оператор",
+    image: "/images/workshops/cinematographer.png",
+    icon: "/icons/workshop/icon6.svg",
+  },
+];
 
 const Workshops: React.FC = () => (
   <section className={styles.workshops} id="programs">

@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
-import navLinks from "../../data/navLinks.json";
 import { useEffect, useState } from "react";
 
 interface NavLinkItem {
@@ -8,7 +7,14 @@ interface NavLinkItem {
   path: string;
 }
 
-const navLinksTyped: NavLinkItem[] = navLinks;
+const navLinksTyped: NavLinkItem[] = [
+  { title: "О нас", path: "/about" },
+  { title: "Педагоги и сотрудники", path: "/teachers" },
+  { title: "Факультеты", path: "/faculties" },
+  { title: "Поступление", path: "/admission" },
+  { title: "События", path: "/events" },
+  { title: "Связаться с нами", path: "/contact" },
+];
 
 const Header: React.FC = () => {
   const [isHeroVisible, setIsHeroVisible] = useState(true);

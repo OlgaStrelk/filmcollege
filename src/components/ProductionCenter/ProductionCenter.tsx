@@ -1,16 +1,24 @@
 import styles from "./ProductionCenter.module.scss";
-import productionCenterData from "../../data/productionCenter.json";
 import { LinkButton } from "../../ui/LinkButton";
+import Link from "../../icons/link.svg?react";
+import type { FC, SVGProps } from "react";
 
 interface ProductionCenterData {
   title: string;
   description: string;
   buttonText: string;
-  buttonIcon: string;
+  buttonIcon: FC<SVGProps<SVGSVGElement>>;
   linkUrl: string;
 }
 
-const productionCenter: ProductionCenterData = productionCenterData;
+const productionCenter: ProductionCenterData = {
+  title: "Проектно-продюсерский центр",
+  description:
+    "Проектно-продюсерский центр продвигает проекты студентов и создает коридоры входа в индустрию для творческих команд студентов и выпускников. В рамках проектно-продюсерского центра для студентов организуется производственная практика в кинопродакшенах и театрах, трудоустройство и возможность компенсировать затраты на обучение (в том числе, через участие в работе продакшена внутри колледжа)",
+  buttonText: "Подробнее",
+  buttonIcon: Link,
+  linkUrl: "#",
+};
 
 const ProductionCenter: React.FC = () => (
   <section className={styles["production-center"]}>
@@ -21,7 +29,7 @@ const ProductionCenter: React.FC = () => (
         <LinkButton
           variant="outline"
           size="default"
-          icon="/icons/link.svg"
+          icon={Link}
           href={productionCenter.linkUrl}
         >
           {productionCenter.buttonText}

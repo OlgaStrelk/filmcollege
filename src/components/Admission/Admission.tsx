@@ -1,6 +1,7 @@
 import styles from "./Admission.module.scss";
-import admissionData from "../../data/admission.json";
 import { LinkButton } from "../../ui/LinkButton";
+import WhiteLink from "../../icons/link_white.svg?react";
+// import ArrowUpRight from "../../icons/arrow-up-right.svg?react"
 
 interface AdmissionStep {
   label: string;
@@ -16,10 +17,34 @@ interface AdmissionData {
   steps: AdmissionStep[];
   note: string;
   buttonText: string;
-  buttonIcon: string;
 }
 
-const admission: AdmissionData = admissionData;
+const admission: AdmissionData = {
+  title: "Поступление",
+  description:
+    "Уважаемые абитуриенты и родители! Открыт прием портфолио для поступающих. Для того, чтобы отправить свое портфолио, нужно заполнить анкету и прикрепить портфолио по ссылке.",
+  linkText: "ссылке",
+  linkUrl: "https://forms.yandex.ru/u/6825c3cb90fa7b5bd73656df",
+  steps: [
+    {
+      label: "3-я волна приема портфолио —",
+      date: "с 1 по 16 июля до 23.59",
+      showSeparator: true,
+    },
+    {
+      label: "Обратная связь и списки прошедших на очные испытания —",
+      date: "20 июля",
+      showSeparator: true,
+    },
+    {
+      label: "Очные испытания —",
+      date: "24-26 июля",
+      showSeparator: false,
+    },
+  ],
+  note: "Если абитуриент планирует поступать в несколько мастерских сразу, необходимо заполнить отдельные анкеты и прикрепить портфолио по каждой мастерской. Ждем ваших заявок!",
+  buttonText: "Подробнее о поступлении",
+};
 
 const Admission: React.FC = () => (
   <section className={styles.admission}>
@@ -53,17 +78,10 @@ const Admission: React.FC = () => (
           <div className={styles["font-l"]}>{admission.note}</div>
         </div>
       </div>
-      {/* <div className={styles['button-container']}> */}
-      <LinkButton
-        variant="default"
-        size="lg"
-        icon="/icons/link_white.svg"
-        href="#"
-      >
+      <LinkButton variant="default" size="lg" icon={WhiteLink} href="#">
         {admission.buttonText}
       </LinkButton>
     </div>
-    {/* </div> */}
   </section>
 );
 

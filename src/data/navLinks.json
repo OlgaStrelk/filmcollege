@@ -1,8 +1,0 @@
-[
-  { "title": "О нас", "path": "/about" },
-  { "title": "Педагоги и сотрудники", "path": "/teachers" },
-  { "title": "Факультеты", "path": "/faculties" },
-  { "title": "Поступление", "path": "/admission" },
-  { "title": "События", "path": "/events" },
-  { "title": "Связаться с нами", "path": "/contact" }
-]

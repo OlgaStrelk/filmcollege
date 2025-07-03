@@ -1,4 +1,4 @@
-import React from "react";
+import React, { type ComponentType } from "react";
 import styles from "./LinkButton.module.scss";
 
 interface LinkButtonProps
@@ -11,7 +11,7 @@ interface LinkButtonProps
     | "ghost"
     | "link";
   size?: "default" | "sm" | "lg" | "icon";
-  icon?: string;
+  icon?: ComponentType<{ className?: string }>;
 }
 
 const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
@@ -20,7 +20,7 @@ const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
       className = "",
       variant = "default",
       size = "default",
-      icon,
+      icon: Icon,
       children,
       ...props
     },
@@ -32,7 +32,7 @@ const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
       {...props}
     >
       {children && <span className={styles["button-text"]}>{children}</span>}
-      {icon && <img src={icon} alt="Link icon" />}
+      {Icon && <Icon className="link-button-icon" />}
     </a>
   ),
 );

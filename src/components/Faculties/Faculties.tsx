@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Faculties.module.scss";
-import facultiesData from "../../data/faculties.json";
 import { LinkButton } from "../../ui/LinkButton";
+import Link from "../../icons/link.svg?react";
 
 interface FacultyContent {
   id: string;
@@ -11,7 +11,32 @@ interface FacultyContent {
   backgroundImage: string;
 }
 
-const typedFaculties: FacultyContent[] = facultiesData;
+const typedFaculties: FacultyContent[] = [
+  {
+    id: "acting",
+    title: "Актёрский факультет",
+    description:
+      "Актёрский факультет сочетает прохождение классической театральной школы, погружение в специфику кино и освоение методов преподавания актёрского мастерства. Подготовка актёров, способных работать в киноиндустрии, на телевидении, в современных цифровых форматах (сериалы, веб-проекты), театре, образовании, психологии, арт-терапии.",
+    linkUrl: "#",
+    backgroundImage: "/images/faculties/actors.png",
+  },
+  {
+    id: "film",
+    title: "Кинофакультет",
+    description:
+      "Кинофакультет готовит профессионалов киноиндустрии, способных создавать кинопроекты разных жанров и масштабов. В программе факультета — изучение выразительных средств кино, исследование языка кино, освоение современных технологий кинопроизводства, изучение профессии в одной из пяти мастерских, работа над кинопроектами в творческих командах, производственная практика в кинопродакшенах.",
+    linkUrl: "#",
+    backgroundImage: "/images/faculties/cinema.png",
+  },
+  {
+    id: "general",
+    title: "Общее образование",
+    description:
+      "Особенности образовательной системы Нового Киноколледжа — углублённое преподавание гуманитарных предметов: истории искусств (изобразительного искусства, музыки, театра, кино), философии, психологии, истории религий; развитие учебных навыков; психологическая подготовка к творческой профессии (навыки рефлексии, работы с эмоциями и чувствами); практика в социальных проектах и экспедициях.",
+    linkUrl: "#",
+    backgroundImage: "/images/faculties/general.png",
+  },
+];
 
 const Faculties: React.FC = () => {
   const [activeFaculty, setActiveFaculty] = useState(typedFaculties[0].id);
@@ -44,7 +69,7 @@ const Faculties: React.FC = () => {
             variant="outline"
             size="lg"
             href={currentFaculty.linkUrl}
-            icon="/icons/link.svg"
+            icon={Link}
           >
             Подробнее о факультете
           </LinkButton>
