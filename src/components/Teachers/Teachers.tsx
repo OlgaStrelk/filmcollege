@@ -1,7 +1,7 @@
 import styles from "./Teachers.module.scss";
 import { useEffect, useMemo, useState } from "react";
-// import { LinkButton } from "../../ui/LinkButton";
-// import WhiteLink from "../../icons/link_white.svg?react";
+import { LinkButton } from "../../ui/LinkButton";
+import WhiteLink from "../../icons/link_white.svg?react";
 
 import OlgaKerzina from "../../assets/images/team_photo/olga_kerzina.png";
 import EvgeniyGoryainov from "../../assets/images/team_photo/evgeniy_goryainov.png";
@@ -216,11 +216,16 @@ const Teachers: React.FC = () => {
           ))}
         </div>
       </div>
-      {/* <div className={styles["button-container"]}>
-        <LinkButton variant="default" size="lg" icon={WhiteLink} href="">
+      <div className={styles["button-container"]}>
+        <LinkButton
+          variant="default"
+          size="lg"
+          icon={WhiteLink}
+          href="/teachers"
+        >
           Все преподаватели
         </LinkButton>
-      </div> */}
+      </div>
     </section>
   );
 };

@@ -60,8 +60,12 @@ const App: React.FC = () => {
           <Route
             path="/prodcenter"
             element={
-              <Placeholder title="Проектно-продюсерский центр центр в разработке" />
+              <Placeholder title="Проектно-продюсерский центр в разработке" />
             }
+          />
+          <Route
+            path="/teachers"
+            element={<Placeholder title="Все преподаватели в разработке" />}
           />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
