@@ -1,11 +1,11 @@
+import React from "react";
 import styles from "./Admission.module.scss";
 import { LinkButton } from "../../ui/LinkButton";
 import WhiteLink from "../../icons/link_white.svg?react";
-// import ArrowUpRight from "../../icons/arrow-up-right.svg?react"
 
 interface AdmissionStep {
   label: string;
-  date: string;
+  date: string[]; // Изменяем на массив строк для кастомных переносов
   showSeparator: boolean;
 }
 
@@ -15,7 +15,7 @@ interface AdmissionData {
   linkText: string;
   linkUrl: string;
   steps: AdmissionStep[];
-  note: string;
+  note: string[]; // Изменяем на массив строк для кастомных переносов
   buttonText: string;
 }
 
@@ -27,22 +27,32 @@ const admission: AdmissionData = {
   linkUrl: "https://forms.yandex.ru/u/6825c3cb90fa7b5bd73656df",
   steps: [
     {
-      label: "3-я волна приема портфолио —",
-      date: "с 1 по 16 июля до 23.59",
+      label: "Прием портфолио осуществляется:",
+      date: [
+        "с 01 по 10 июля до 23:59 в мастерские «Звукорежиссер», «Оператор»",
+        "с 01 по 16 июля до 23:59 в остальные мастерские",
+      ],
       showSeparator: true,
     },
     {
       label: "Обратная связь и списки прошедших на очные испытания —",
-      date: "20 июля",
+      date: [
+        "12 июля для мастерских «Звукорежиссер» и «Оператор»",
+        "20 июля для остальных мастерских",
+      ],
       showSeparator: true,
     },
     {
       label: "Очные испытания —",
-      date: "24-26 июля",
+      date: ["24-26 июля"],
       showSeparator: false,
     },
   ],
-  note: "Если абитуриент планирует поступать в несколько мастерских сразу, необходимо заполнить отдельные анкеты и прикрепить портфолио по каждой мастерской. Ждем ваших заявок!",
+  note: [
+    "Если абитуриент планирует поступать в несколько мастерских сразу, необходимо заполнить отдельные анкеты и прикрепить портфолио по каждой мастерской.",
+    "Перед отправкой анкеты с портфолио убедитесь, что задания выполнены в соответствии с требованиями, ссылка на портфолио открывается и настроена на «доступ всем, у кого есть ссылка».",
+    "Ждем ваших заявок!",
+  ],
   buttonText: "Подробнее о поступлении",
 };
 
@@ -70,12 +80,26 @@ const Admission: React.FC = () => (
             <div key={index} className={styles["step-item"]}>
               <div className={styles["step-text"]}>
                 <span className={styles["step-label"]}>{step.label}</span>
-                <span className={styles["step-date"]}>{step.date}</span>
+                <span className={styles["step-date"]}>
+                  {step.date.map((line, lineIndex) => (
+                    <React.Fragment key={lineIndex}>
+                      {line}
+                      {lineIndex < step.date.length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </span>
               </div>
               {step.showSeparator && <div className={styles.separator} />}
             </div>
           ))}
-          <div className={styles["font-l"]}>{admission.note}</div>
+          <div className={styles["font-l"]}>
+            {admission.note.map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                {index < admission.note.length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
       <LinkButton variant="default" size="lg" icon={WhiteLink} href="#">
