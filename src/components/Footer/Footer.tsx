@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
     {
       name: "Telegram",
       icon: TelegramIcon,
-      url: "#",
+      url: "https://t.me/+11Tx3t59WzNkODBi",
     },
   ];
 

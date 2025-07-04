@@ -5,6 +5,7 @@ import styles from "./App.module.scss";
 import Home from "../../pages/Home";
 import PageNotFound from "../../pages/PageNotFound";
 import MainLayout from "../../ui/MainLayot/MainLayout";
+import Placeholder from "../../pages/Placeholder";
 // import About from '../../pages/About';
 // import Teachers from '../../pages/Teachers';
 // import Faculties from '../../pages/Faculties';
@@ -22,12 +23,46 @@ const App: React.FC = () => {
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
           </Route>
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/teachers" element={<Teachers />} />
-          <Route path="/faculties" element={<Faculties activeFaculty={activeFaculty} setActiveFaculty={setActiveFaculty} />} />
-          <Route path="/admission" element={<Admission />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/contact" element={<Contact />} /> */}
+          <Route
+            path="/about"
+            element={<Placeholder title="Подробнее в разработке" />}
+          />
+          <Route
+            path="/teachers"
+            element={<Placeholder title="Все педагоги в разработке" />}
+          />
+          <Route
+            path="/faculties"
+            element={<Placeholder title="Факультеты в разработке" />}
+          />
+          <Route
+            path="/admission"
+            element={<Placeholder title="Поступление в разработке" />}
+          />
+          <Route
+            path="/events"
+            element={<Placeholder title="События в разработке" />}
+          />
+          <Route
+            path="/actors"
+            element={<Placeholder title="Актёрский факультет в разработке" />}
+          />
+          <Route
+            path="/film"
+            element={<Placeholder title="Кинофакультет в разработке" />}
+          />
+          <Route
+            path="/general"
+            element={
+              <Placeholder title="Факультет Общее образование в разработке" />
+            }
+          />
+          <Route
+            path="/prodcenter"
+            element={
+              <Placeholder title="Проектно-продюсерский центр центр в разработке" />
+            }
+          />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>

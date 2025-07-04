@@ -5,7 +5,7 @@ import WhiteLink from "../../icons/link_white.svg?react";
 
 interface AdmissionStep {
   label: string;
-  date: string[]; // Изменяем на массив строк для кастомных переносов
+  date: string[];
   showSeparator: boolean;
 }
 
@@ -15,7 +15,7 @@ interface AdmissionData {
   linkText: string;
   linkUrl: string;
   steps: AdmissionStep[];
-  note: string[]; // Изменяем на массив строк для кастомных переносов
+  note: string[];
   buttonText: string;
 }
 
@@ -43,8 +43,11 @@ const admission: AdmissionData = {
       showSeparator: true,
     },
     {
-      label: "Очные испытания —",
-      date: ["24-26 июля"],
+      label: "Очные испытания",
+      date: [
+        "14-16 июля — 1ая волна очных испытаний для поступающих на кинофакультет",
+        "24-26 июля — 2ая волна очных испытаний для поступающих на все факультеты",
+      ],
       showSeparator: false,
     },
   ],
@@ -79,14 +82,28 @@ const Admission: React.FC = () => (
           {admission.steps.map((step, index) => (
             <div key={index} className={styles["step-item"]}>
               <div className={styles["step-text"]}>
-                <span className={styles["step-label"]}>{step.label}</span>
+                <span className={styles["step-label"]}>
+                  {step.label}
+                  {step.label === "Очные испытания" && <br />}
+                </span>
                 <span className={styles["step-date"]}>
-                  {step.date.map((line, lineIndex) => (
-                    <React.Fragment key={lineIndex}>
-                      {line}
-                      {lineIndex < step.date.length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
+                  {step.date.map((line, lineIndex) => {
+                    const [datePart, ...rest] = line.split(" — ");
+                    return (
+                      <React.Fragment key={lineIndex}>
+                        <span>
+                          {datePart.startsWith("14-16 июля") ||
+                          datePart.startsWith("24-26 июля") ? (
+                            <strong>{datePart} — </strong>
+                          ) : (
+                            `${datePart} — `
+                          )}
+                          {rest.join(" — ")}
+                        </span>
+                        {lineIndex < step.date.length - 1 && <br />}
+                      </React.Fragment>
+                    );
+                  })}
                 </span>
               </div>
               {step.showSeparator && <div className={styles.separator} />}
@@ -102,7 +119,7 @@ const Admission: React.FC = () => (
           </div>
         </div>
       </div>
-      <LinkButton variant="default" size="lg" icon={WhiteLink} href="#">
+      <LinkButton variant="default" size="lg" icon={WhiteLink} href="/about">
         {admission.buttonText}
       </LinkButton>
     </div>

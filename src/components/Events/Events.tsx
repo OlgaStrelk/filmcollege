@@ -43,7 +43,7 @@ const events: EventsData = {
     },
   ],
   buttonText: "Все события",
-  buttonUrl: "#",
+  buttonUrl: "/events",
 };
 const Events: React.FC = () => (
   <section className={styles.events}>

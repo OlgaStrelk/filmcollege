@@ -76,7 +76,7 @@ const Workshops: React.FC = () => (
         const HoverIcon = workshop.hoverIcon;
         return (
           <Link
-            to="#"
+            to="https://t.me/+11Tx3t59WzNkODBi"
             key={workshop.title + index}
             className={styles["workshop-item"]}
             aria-label={`Подробнее о мастерской ${workshop.title}`}
