@@ -25,7 +25,7 @@ const App: React.FC = () => {
           </Route>
           <Route
             path="/about"
-            element={<Placeholder title="Подробнее в разработке" />}
+            element={<Placeholder title="Поступление в разработке" />}
           />
           <Route
             path="/teachers"
