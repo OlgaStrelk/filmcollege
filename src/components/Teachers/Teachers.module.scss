@@ -1,3 +1,12 @@
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
 .teachers {
   margin: 80px 0;
   overflow: hidden;
@@ -18,7 +27,13 @@
   .teachers-carousel {
     display: flex;
     width: max-content;
-transition: transform 0.2s linear;  }
+    animation: scroll 250s linear infinite;
+    transform: translateX(calc(-1 * var(--random-offset, 0px)));
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
 
   .teacher-card {
     flex: 0 0 307.33px;

@@ -10,14 +10,14 @@ import Icon6 from "../../assets/icons/workshop/icon6.svg?react";
 
 interface CardItemProps {
   title: string;
-  image?: string; // Для Workshops — фоновая картинка
-  icon: string; // Название иконки ("icon1", "icon2", ...)
-  popupDescription?: string; // Описание для попапа (для Workshops)
-  places?: number; // Количество мест (для Faculties)
-  bgColor?: string; // Цвет фона иконки (для Faculties)
-  textColor?: string; // Цвет текста (для Faculties)
-  onClick?: () => void; // Обработчик клика для открытия попапа
-  className?: string; // Дополнительный класс для ховер-эффектов
+  image?: string;
+  icon: string;
+  popupDescription?: string;
+  places?: number;
+  bgColor?: string;
+  textColor?: string;
+  onClick?: () => void;
+  className?: string;
 }
 
 const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
