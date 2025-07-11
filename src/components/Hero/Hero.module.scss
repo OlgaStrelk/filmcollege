@@ -1,7 +1,7 @@
 .hero {
   margin: 0 24px 80px;
   position: relative;
-  min-height: 500px;
+  min-height: calc(100vh - 48px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -42,6 +42,8 @@
     h1 {
       font-size: 48px;
       margin-bottom: 24px;
+      font-weight: 400;
+      max-width: 575px;
     }
 
     p {

@@ -119,7 +119,7 @@
 .expand-icon {
   width: 32px;
   height: 32px;
-  transition: transform 0.3s ease; 
+  transition: transform 0.5s ease; 
 }
 
 .rotate-icon {
@@ -192,7 +192,7 @@
   padding: 8px;
   border: 1px solid #19191926;
   border-radius: 100px;
-  transition: background-color 0.2s;
+  transition: background-color 0.5s;
 
   &:hover {
     background-color: #e5e4e0;

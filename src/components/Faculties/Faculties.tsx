@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Faculties.module.scss";
 import { LinkButton } from "../../ui/LinkButton";
-import Link from "../../icons/link.svg?react";
+import Link from "../../assets/icons/link.svg?react";
 import Actors from "../../assets/images/faculties/actors.png";
 import Cinema from "../../assets/images/faculties/cinema.png";
 import General from "../../assets/images/faculties/general.png";

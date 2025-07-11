@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Footer.module.scss";
-import Divider from "../../icons/line-1.svg";
+import Divider from "../../assets/icons/line-1.svg";
 import Logo from "/logo.svg";
-import DocumentIcon from "../../icons/document.svg";
-import ExpandIcon from "../../icons/arrow-down.svg";
-import VkIcon from "../../icons/vk.svg";
-import TelegramIcon from "../../icons/telegram.svg";
+import DocumentIcon from "../../assets/icons/document.svg";
+import ExpandIcon from "../../assets/icons/arrow-down.svg";
+import VkIcon from "../../assets/icons/vk.svg";
+import TelegramIcon from "../../assets/icons/telegram.svg";
 import { LinkButton } from "../../ui/LinkButton";
 
 interface Document {

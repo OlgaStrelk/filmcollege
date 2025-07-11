@@ -1,6 +1,6 @@
 import styles from "./ProductionCenter.module.scss";
 import { LinkButton } from "../../ui/LinkButton";
-import Link from "../../icons/link.svg?react";
+import Link from "../../assets/icons/link.svg?react";
 import type { FC, SVGProps } from "react";
 
 interface ProductionCenterData {
@@ -21,7 +21,7 @@ const productionCenter: ProductionCenterData = {
 };
 
 const ProductionCenter: React.FC = () => (
-  <section className={styles["production-center"]}>
+  <section className={styles["production-center"]} id="prodcenter">
     <div className={styles.container}>
       <h2>{productionCenter.title}</h2>
       <p>{productionCenter.description}</p>

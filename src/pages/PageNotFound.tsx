@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import ArrowRight from "../icons/arrow-right.svg?react";
+import ArrowRight from "../assets/icons/arrow-right.svg?react";
 import { LinkButton } from "../ui/LinkButton";
 
 const PageNotFound: FC = () => {

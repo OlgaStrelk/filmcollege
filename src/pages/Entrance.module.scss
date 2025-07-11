@@ -1,0 +1,454 @@
+$font-geologica: 'Geologica', Helvetica, sans-serif;
+$color-background: #efeeea;
+$color-text-primary: #191919;
+$color-text-secondary: #19191999;
+$color-accent: #0b4a4c;
+$color-border: #19191926;
+
+
+.faculties {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 160px 60px 80px;
+  display: flex;
+  gap: 40px;
+  background-color: $color-background;
+
+  .facultyList {
+    display: flex;
+    flex-direction: column;
+    width: 541px;
+    justify-content: space-between;
+
+    .title {
+      font-family: $font-geologica;
+      font-weight: 400;
+      color: $color-text-primary;
+      font-size: 48px;
+      letter-spacing: -0.96px;
+      line-height: 120%;
+    }
+
+    .description {
+      font-family: $font-geologica;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 28px;
+      color: transparent;
+
+      .text {
+        font-weight: 300;
+        color: $color-text-primary;
+        letter-spacing: 0;
+        line-height: 0.1px;
+      }
+
+      .link {
+        font-weight: 300;
+        color: $color-text-primary;
+        letter-spacing: -0.28px;
+        line-height: 39.2px;
+        text-decoration: underline;
+        font-size: 28px;
+      }
+    }
+  }
+
+  .stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 20px 0 20px 40px;
+    border-left: 2px solid $color-border;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
+
+      .sectionText {
+        font-family: $font-geologica;
+        font-weight: 500;
+        color: $color-text-primary;
+        font-size: 32px;
+        letter-spacing: -0.32px;
+        line-height: 44.8px;
+      }
+
+      .line {
+        width: 100%;
+        height: 2px;
+      }
+
+      .highlight {
+        color: $color-text-primary;
+        letter-spacing: -0.1px;
+      }
+
+      .muted {
+        color: $color-text-secondary;
+        letter-spacing: -0.1px;
+      }
+
+      .flexcontainer {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .text {
+          font-family: $font-geologica;
+          font-weight: 300;
+          color: $color-text-secondary;
+          font-size: 20px;
+          line-height: 140%;
+        }
+      }
+    }
+  }
+}
+
+.faculties2 {
+  padding: 80px 60px;
+  display: flex;
+  gap: 40px;
+  background-color: $color-background;
+
+  .sectionTitleWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 541px;
+    gap: 40px;
+
+    .title {
+      font-family: $font-geologica;
+      font-weight: 300;
+      font-size: 28px;
+      line-height: 140%;
+      color: transparent;
+
+      .primary {
+        color: $color-text-primary;
+      }
+
+      .secondary {
+        color: $color-text-secondary;
+      }
+    }
+  }
+}
+
+.classes {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 60px;
+  background-color: $color-background;
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+
+    .section-title {
+      font-family: $font-geologica;
+      font-weight: 300;
+      font-size: 28px;
+      line-height: 140%;
+      color: $color-text-primary;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 986px;
+    gap: 16px;
+
+    .card {
+      width: 318px;
+      height: 240px;
+      position: relative;
+
+      .overlapGroup {
+        height: 240px;
+        position: relative;
+
+        .icon {
+          background-color: $color-accent;
+          width: 54px;
+          height: 54px;
+          border-radius: 99px;
+          position: absolute;
+          top: 3px;
+          left: 3px;
+
+          .img {
+            width: 38px;
+            height: 38px;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+          }
+        }
+
+        .subtract {
+          width: 318px;
+          height: 240px;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .line {
+          width: 238px;
+          height: 2px;
+          position: absolute;
+          top: 116px;
+          left: 40px;
+        }
+
+        .title {
+          position: absolute;
+          width: 238px;
+          top: 165px;
+          left: 40px;
+          font-family: $font-geologica;
+          font-weight: 300;
+          font-size: 28px;
+          letter-spacing: -0.28px;
+          line-height: 33.6px;
+          color: #efeeea;
+        }
+
+        .count {
+          position: absolute;
+          height: 58px;
+          top: 39px;
+          font-family: $font-geologica;
+          font-weight: 400;
+          font-size: 48px;
+          text-align: right;
+          letter-spacing: -0.96px;
+          line-height: 120%;
+          color: #efeeea;
+        }
+      }
+    }
+  }
+
+  .frame {
+    display: flex;
+    width: 986px;
+    gap: 16px;
+
+    .frameWrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 40px;
+      padding: 40px;
+      background-color: $color-background;
+      border-radius: 42px;
+      border: 2px solid $color-border;
+
+      .frame2 {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .frame3 {
+          display: inline-flex;
+          align-items: flex-end;
+          gap: 8px;
+
+          .price {
+            font-family: $font-geologica;
+            font-weight: 300;
+            font-size: 32px;
+            text-align: right;
+            letter-spacing: -0.32px;
+            line-height: 40px;
+            color: $color-text-primary;
+          }
+
+          .period {
+            font-family: $font-geologica;
+            font-weight: 300;
+            font-size: 14px;
+            text-align: right;
+            line-height: 40px;
+            color: $color-text-primary;
+          }
+        }
+
+        .description {
+          width: 238px;
+          font-family: $font-geologica;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 19.6px;
+          color: $color-text-secondary;
+        }
+      }
+    }
+
+    .divWrapper {
+      @extend .frameWrapper;
+      background-color: #ffffff80;
+    }
+
+    .card2 {
+      @extend .frameWrapper;
+
+      .frame4 {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .text {
+          width: 238px;
+          font-family: $font-geologica;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 140%;
+          color: $color-text-primary;
+        }
+      }
+    }
+  }
+}
+
+.portfolio {
+  display: flex;
+  gap: 127px;
+  padding: 80px 60px;
+  background-color: $color-background;
+
+  .facultyList {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .title {
+      font-family: $font-geologica;
+      font-weight: 400;
+      font-size: 48px;
+      letter-spacing: -0.96px;
+      line-height: 120%;
+      color: $color-text-primary;
+    }
+
+    .vStack {
+      display: flex;
+      flex-direction: column;
+      width: 316px;
+      gap: 16px;
+
+      .field {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        .vector {
+          width: 4px;
+          height: 4px;
+          background-color: $color-text-primary;
+          border-radius: 2px;
+        }
+
+        .facultyName {
+          font-family: $font-geologica;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 140%;
+          color: $color-text-primary;
+
+          &.secondary {
+            color: $color-text-secondary;
+          }
+        }
+      }
+    }
+  }
+
+  .stack {
+    display: flex;
+    flex-direction: column;
+    width: 875px;
+    gap: 64px;
+    padding-right: 223px;
+
+    .sectionHeader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 0;
+      width: 100%;
+
+      .sectionTitle {
+        font-family: $font-geologica;
+        font-weight: 300;
+        font-size: 32px;
+        letter-spacing: -0.32px;
+        line-height: 140%;
+        color: $color-text-secondary;
+      }
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      width: 628px;
+      gap: 12px;
+      padding-left: 40px;
+      border-left: 2px solid $color-border;
+
+      .sectionDetail {
+        display: flex;
+        gap: 18px;
+        width: 100%;
+
+        .sectionText {
+          font-family: $font-geologica;
+          font-weight: 300;
+          font-size: 28px;
+          letter-spacing: -0.28px;
+          line-height: 140%;
+          color: $color-text-primary;
+        }
+      }
+
+      .sectionText {
+        font-family: $font-geologica;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 140%;
+        color: transparent;
+
+        .primary {
+          color: $color-text-primary;
+        }
+
+        .secondary {
+          color: $color-text-secondary;
+        }
+      }
+    }
+
+    .flexcontainer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .spanWrapper {
+        font-family: $font-geologica;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 140%;
+        color: $color-text-primary;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import { LinkButton } from "../../ui/LinkButton";
 import styles from "./Hero.module.scss";
-import ArrowRightBlack from "../../icons/arrow-right-black.svg?react";
+import ArrowRightBlack from "../../assets/icons/arrow-right-black.svg?react";
 
 import HeroVideo from "../../assets/videos/hero-video.mov";
 

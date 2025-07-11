@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Events.module.scss";
 import { LinkButton } from "../../ui/LinkButton";
-import WhiteLink from "../../icons/link_white.svg?react";
+import WhiteLink from "../../assets/icons/link_white.svg?react";
 
 interface Event {
   id: number;

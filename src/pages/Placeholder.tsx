@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Placeholder.module.scss";
 import { LinkButton } from "../ui/LinkButton";
-import WhiteLink from "../icons/link_white.svg?react";
+import WhiteLink from "../../assets/icons/link_white.svg?react";
 interface PlaceholderProps {
   title?: string;
   description?: string;

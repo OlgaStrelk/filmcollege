@@ -11,7 +11,7 @@
   font-weight: 400;
   line-height: 32px;
   letter-spacing: -0.16px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   text-decoration: none;
   cursor: pointer;
 
@@ -39,11 +39,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 32px;
 
-    &:hover {
-      background-color: hsla(224, 17%, 12%, 0.9);
-      transform: scale(1.02);
-    }
-
     .icon {
       background-color: hsl(0, 0%, 100%);
       color: hsl(222.2, 47.4%, 11.2%);
@@ -54,12 +49,6 @@
     background-color: hsl(0, 0%, 100%);
     color: hsl(222.2, 47.4%, 11.2%);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-    &:hover {
-      background-color: hsl(210, 40%, 96.1%);
-      color: hsl(222.2, 47.4%, 11.2%);
-      transform: scale(1.02);
-    }
   }
 
   &.ghost {
@@ -79,11 +68,6 @@
     letter-spacing: -0.14px;
     line-height: 28px;
     cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: #e5e4e0;
-    }
   }
   &.default {
     height: 48px;

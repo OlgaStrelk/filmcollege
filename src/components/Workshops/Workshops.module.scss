@@ -7,7 +7,7 @@
   justify-content: space-between;
 
   .workshop-grid {
-    margin:0 auto;
+    margin: 0 auto;
     flex: 1;
     display: grid;
     max-width: 986px;
@@ -32,7 +32,7 @@
     aspect-ratio: 318 / 240;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
   }
 
   .workshop-icon {
@@ -42,27 +42,10 @@
     width: 54px;
     height: 54px;
     z-index: 2;
-    transition: content 0.3s ease;
+    transition: content 0.5s ease;
   }
 
-  .workshop-icon-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 54px;
-    height: 54px;
-    opacity: 0;
-    z-index: 2;
-    transition: opacity 0.3s ease;
-  }
 
-  .workshop-item:hover .workshop-icon {
-    opacity: 0;
-  }
-
-  .workshop-item:hover .workshop-icon-hover {
-    opacity: 1;
-  }
 
   .hover-image {
     position: absolute;
@@ -74,7 +57,7 @@
     background-position: center;
     opacity: 0;
     z-index: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     -webkit-mask-image: url("/icons/card-overlay.svg");
     mask-image: url("/icons/card-overlay.svg");
     mask-size: contain;
@@ -85,8 +68,11 @@
   .workshop-item:hover .hover-image {
     opacity: 1;
   }
-    .workshop-item:hover .title {
-    color: #EFEEEA;
+  .workshop-item:hover .workshop-icon {
+    color: #0b4a4c;
+  }
+  .workshop-item:hover .title {
+    color: #efeeea;
   }
 
   .title {
@@ -100,6 +86,69 @@
     letter-spacing: -1%;
     vertical-align: bottom;
     z-index: 3;
-    color:#191919;
+    color: #191919;
+  }
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  .popup-content {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--stroke-15, #19191926);
+    border-radius: 32px;
+    padding: 24px;
+    max-width: 448px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .popup-title {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #191919;
+    margin: 0;
+  }
+
+  .popup-description {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #19191999;
+  }
+
+  .popup-close {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    color: #191919;
   }
 }

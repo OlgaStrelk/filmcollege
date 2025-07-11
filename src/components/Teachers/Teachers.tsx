@@ -1,7 +1,7 @@
 import styles from "./Teachers.module.scss";
 import { useEffect, useMemo, useState } from "react";
 import { LinkButton } from "../../ui/LinkButton";
-import WhiteLink from "../../icons/link_white.svg?react";
+import WhiteLink from "../../assets/icons/link_white.svg?react";
 
 import OlgaKerzina from "../../assets/images/team_photo/olga_kerzina.png";
 import EvgeniyGoryainov from "../../assets/images/team_photo/evgeniy_goryainov.png";
