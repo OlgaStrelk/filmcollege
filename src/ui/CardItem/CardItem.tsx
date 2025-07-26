@@ -7,19 +7,7 @@ import Icon3 from "../../assets/icons/workshop/icon3.svg?react";
 import Icon4 from "../../assets/icons/workshop/icon4.svg?react";
 import Icon5 from "../../assets/icons/workshop/icon5.svg?react";
 import Icon6 from "../../assets/icons/workshop/icon6.svg?react";
-
-interface CardItemProps {
-  title: string;
-  image?: string;
-  icon: string;
-  popupDescription?: string;
-  places?: number;
-  bgColor?: string;
-  textColor?: string;
-  onClick?: () => void;
-  className?: string;
-}
-
+import classNames from "classnames";
 const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   icon1: Icon1,
   icon2: Icon2,
@@ -29,62 +17,53 @@ const iconMap: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   icon6: Icon6,
 };
 
+interface CardItemProps {
+  title: string;
+  image?: string;
+  popupDescription?: string;
+  places?: number;
+  icon: keyof typeof iconMap;
+  onClick?: () => void;
+  className?: string;
+  children: React.ReactNode;
+}
+
 const CardItem: React.FC<CardItemProps> = ({
   title,
-  image,
   icon,
-  // popupDescription,
-  places,
-  bgColor,
-  textColor,
   onClick,
   className,
+  children,
 }) => {
   const Icon = iconMap[icon];
-
+  const isButton = !!onClick;
   if (!Icon) {
     console.error(`Icon ${icon} not found`);
     return null;
   }
+  const interactiveProps = isButton
+    ? {
+        role: "button",
+        tabIndex: 0,
+        "aria-label": `Подробнее о ${title}`,
+        onClick,
+        onKeyDown: (e: React.KeyboardEvent) => {
+          if (e.key === "Enter" || e.key === "Space") {
+            e.preventDefault();
+            onClick?.();
+          }
+        },
+      }
+    : {};
 
   return (
     <div
-      className={`${styles.cardItem} ${className || ""}`}
-      onClick={onClick}
-      role="button"
-      tabIndex={0}
-      aria-label={`Подробнее о ${title}`}
-      onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          onClick?.();
-        }
-      }}
+      className={classNames(styles["card-item"], className)}
+      {...interactiveProps}
     >
-      <div className={styles.cardBackground}></div>
-      <Icon
-        className={styles.cardIcon}
-        style={bgColor ? { backgroundColor: bgColor } : undefined}
-      />
-      {image && (
-        <div
-          className={styles.hoverImage}
-          style={{ backgroundImage: `url(${image})` }}
-        ></div>
-      )}
-      <div
-        className={styles.title}
-        style={textColor ? { color: textColor } : undefined}
-      >
-        {title}
-      </div>
-      {places && (
-        <div
-          className={styles.places}
-          style={textColor ? { color: textColor } : undefined}
-        >
-          {places}
-        </div>
-      )}
+      <div className={styles["card-background"]}></div>
+      <Icon className={styles["card-icon"]} />
+      {children}
     </div>
   );
 };

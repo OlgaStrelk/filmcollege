@@ -1,43 +1,57 @@
-// import { useState } from 'react';
-import "../../assets/fonts/fonts.css";
 import { Routes, Route } from "react-router-dom";
+import { Suspense, Component, type ReactNode } from "react";
 import styles from "./App.module.scss";
-import Home from "../../pages/Home";
-import PageNotFound from "../../pages/PageNotFound";
-import MainLayout from "../../ui/MainLayot/MainLayout";
-import Entrance from "../../pages/Entrance";
-// import About from '../../pages/About';
-// import Teachers from '../../pages/Teachers';
-// import Faculties from '../../pages/Faculties';
-// import Admission from '../../pages/Admission';
-// import Events from '../../pages/Events';
-// import Contact from '../../pages/Contact';
+import { ROUTE_CONFIG } from "../../utils/routeConfig";
+import { MainLayout } from "../../ui/MainLayout";
+
+// Компонент загрузки
+const LoadingSpinner: React.FC = () => (
+  <div className={styles.loader}>Загрузка страницы...</div>
+);
+
+// Компонент обработки ошибок
+class ErrorBoundary extends Component<{ children: ReactNode }> {
+  state = { hasError: false };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <div>Ошибка загрузки страницы. Попробуйте позже.</div>;
+    }
+    return this.props.children;
+  }
+}
+
+// Кэш для компонентов
 
 const App: React.FC = () => {
-  // const [activeFaculty, setActiveFaculty] = useState<string>('АКТЁРСКИЙ ФАКУЛЬТЕТ');
-
   return (
     <div className={styles.app}>
       <main>
-        <Routes>
-          <Route element={<MainLayout />}>
-            <Route path="/" element={<Home />} />
-          </Route>
-          <Route path="/about" element={<PageNotFound />} />
-          <Route path="/teachers" element={<PageNotFound />} />
-          <Route path="/faculties" element={<PageNotFound />} />
-          <Route element={<MainLayout />}>
-            <Route path="/admission" element={<Entrance />} />
-          </Route>
-
-          <Route path="/events" element={<PageNotFound />} />
-          <Route path="/actors" element={<PageNotFound />} />
-          <Route path="/film" element={<PageNotFound />} />
-          <Route path="/general" element={<PageNotFound />} />
-          <Route path="/prodcenter" element={<PageNotFound />} />
-          <Route path="/teachers" element={<PageNotFound />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
+        <Suspense fallback={<LoadingSpinner />}>
+          <ErrorBoundary>
+            <Routes>
+              {ROUTE_CONFIG.map(({ path, component: Component, useLayout }) => (
+                <Route
+                  key={path}
+                  path={path}
+                  element={
+                    useLayout ? (
+                      <MainLayout>
+                        <Component />
+                      </MainLayout>
+                    ) : (
+                      <Component />
+                    )
+                  }
+                />
+              ))}
+            </Routes>
+          </ErrorBoundary>
+        </Suspense>
       </main>
     </div>
   );

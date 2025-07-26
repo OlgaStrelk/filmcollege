@@ -1,10 +1,9 @@
-$font-geologica: 'Geologica', Helvetica, sans-serif;
+$font-geologica: "Geologica", Helvetica, sans-serif;
 $color-background: #efeeea;
 $color-text-primary: #191919;
 $color-text-secondary: #19191999;
 $color-accent: #0b4a4c;
 $color-border: #19191926;
-
 
 .faculties {
   max-width: 1400px;
@@ -161,81 +160,41 @@ $color-border: #19191926;
     }
   }
 
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    width: 986px;
-    gap: 16px;
+  .card-container {
+    position: relative;
 
-    .card {
-      width: 318px;
-      height: 240px;
-      position: relative;
+    .line {
+      width: 238px;
+      height: 2px;
+      position: absolute;
+      top: 116px;
+      left: 40px;
+    }
 
-      .overlapGroup {
-        height: 240px;
-        position: relative;
+    .facultyTitle {
+      padding-left: 40px;
+      width: 200px;
+      padding-top: 30px;
+      z-index: 1;
+      font-family: $font-geologica;
+      font-weight: 300;
+      font-size: 28px;
+      letter-spacing: -0.28px;
+      line-height: 33.6px;
+      color: #19191999;
+    }
 
-        .icon {
-          background-color: $color-accent;
-          width: 54px;
-          height: 54px;
-          border-radius: 99px;
-          position: absolute;
-          top: 3px;
-          left: 3px;
-
-          .img {
-            width: 38px;
-            height: 38px;
-            position: absolute;
-            top: 8px;
-            left: 8px;
-          }
-        }
-
-        .subtract {
-          width: 318px;
-          height: 240px;
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-
-        .line {
-          width: 238px;
-          height: 2px;
-          position: absolute;
-          top: 116px;
-          left: 40px;
-        }
-
-        .title {
-          position: absolute;
-          width: 238px;
-          top: 165px;
-          left: 40px;
-          font-family: $font-geologica;
-          font-weight: 300;
-          font-size: 28px;
-          letter-spacing: -0.28px;
-          line-height: 33.6px;
-          color: #efeeea;
-        }
-
-        .count {
-          position: absolute;
-          height: 58px;
-          top: 39px;
-          font-family: $font-geologica;
-          font-weight: 400;
-          font-size: 48px;
-          text-align: right;
-          letter-spacing: -0.96px;
-          line-height: 120%;
-          color: #efeeea;
-        }
-      }
+    .places {
+      padding-top: 55px;
+      padding-right: 40px;
+      z-index: 1;
+      font-family: $font-geologica;
+      font-weight: 400;
+      font-size: 36px;
+      text-align: right;
+      letter-spacing: -0.96px;
+      line-height: 120%;
+      color: #191919;
     }
   }
 
@@ -315,139 +274,6 @@ $color-border: #19191926;
           line-height: 140%;
           color: $color-text-primary;
         }
-      }
-    }
-  }
-}
-
-.portfolio {
-  display: flex;
-  gap: 127px;
-  padding: 80px 60px;
-  background-color: $color-background;
-
-  .facultyList {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 40px;
-
-    .title {
-      font-family: $font-geologica;
-      font-weight: 400;
-      font-size: 48px;
-      letter-spacing: -0.96px;
-      line-height: 120%;
-      color: $color-text-primary;
-    }
-
-    .vStack {
-      display: flex;
-      flex-direction: column;
-      width: 316px;
-      gap: 16px;
-
-      .field {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-
-        .vector {
-          width: 4px;
-          height: 4px;
-          background-color: $color-text-primary;
-          border-radius: 2px;
-        }
-
-        .facultyName {
-          font-family: $font-geologica;
-          font-weight: 300;
-          font-size: 20px;
-          line-height: 140%;
-          color: $color-text-primary;
-
-          &.secondary {
-            color: $color-text-secondary;
-          }
-        }
-      }
-    }
-  }
-
-  .stack {
-    display: flex;
-    flex-direction: column;
-    width: 875px;
-    gap: 64px;
-    padding-right: 223px;
-
-    .sectionHeader {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 0;
-      width: 100%;
-
-      .sectionTitle {
-        font-family: $font-geologica;
-        font-weight: 300;
-        font-size: 32px;
-        letter-spacing: -0.32px;
-        line-height: 140%;
-        color: $color-text-secondary;
-      }
-    }
-
-    .section {
-      display: flex;
-      flex-direction: column;
-      width: 628px;
-      gap: 12px;
-      padding-left: 40px;
-      border-left: 2px solid $color-border;
-
-      .sectionDetail {
-        display: flex;
-        gap: 18px;
-        width: 100%;
-
-        .sectionText {
-          font-family: $font-geologica;
-          font-weight: 300;
-          font-size: 28px;
-          letter-spacing: -0.28px;
-          line-height: 140%;
-          color: $color-text-primary;
-        }
-      }
-
-      .sectionText {
-        font-family: $font-geologica;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 140%;
-        color: transparent;
-
-        .primary {
-          color: $color-text-primary;
-        }
-
-        .secondary {
-          color: $color-text-secondary;
-        }
-      }
-    }
-
-    .flexcontainer {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-
-      .spanWrapper {
-        font-family: $font-geologica;
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 140%;
-        color: $color-text-primary;
       }
     }
   }

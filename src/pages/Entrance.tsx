@@ -1,63 +1,41 @@
 import React from "react";
 import styles from "./Entrance.module.scss";
 import lineSvg from "../assets/icons/line-1.svg";
-import subtractSvg from "../assets/icons/card-overlay.svg";
-import masksSvg from "../assets/icons/workshop/icon1.svg";
-import scriptSvg from "../assets/icons/workshop/icon2.svg";
-import trumpetSvg from "../assets/icons/workshop/icon3.svg";
-import filmCropSvg from "../assets/icons/workshop/icon4.svg";
-import settingsSvg from "../assets/icons/workshop/icon5.svg";
-import arrowSquareSvg from "../assets/icons/workshop/icon6.svg";
+import CardItem from "../ui/CardItem/CardItem";
+import CardsGrid from "../ui/CardsGrid/CardsGrid";
+import Portfolio from "../components/Portfolio/Portfolio";
 
 const Entrance: React.FC = () => {
   const faculties = [
     {
       title: "Актёр",
       places: 35,
-      icon: masksSvg,
-      subtract: subtractSvg,
-      bgColor: "#0b4a4c",
-      textColor: "#efeeea",
+      icon: "icon1",
     },
     {
       title: "Сценарист",
       places: 15,
-      icon: scriptSvg,
-      subtract: subtractSvg,
-      bgColor: "#191919",
-      textColor: "#19191999",
+      icon: "icon2",
     },
     {
       title: "Режиссёр",
       places: 15,
-      icon: trumpetSvg,
-      subtract: subtractSvg,
-      bgColor: "#191919",
-      textColor: "#19191999",
+      icon: "icon3",
     },
     {
       title: "Режиссёр монтажа",
       places: 15,
-      icon: filmCropSvg,
-      subtract: subtractSvg,
-      bgColor: "#191919",
-      textColor: "#19191999",
+      icon: "icon4",
     },
     {
       title: "Звукорежиссёр",
       places: 10,
-      icon: settingsSvg,
-      subtract: subtractSvg,
-      bgColor: "#191919",
-      textColor: "#19191999",
+      icon: "icon5",
     },
     {
       title: "Оператор",
       places: 15,
-      icon: arrowSquareSvg,
-      subtract: subtractSvg,
-      bgColor: "#191919",
-      textColor: "#19191999",
+      icon: "icon6",
     },
   ];
 
@@ -131,7 +109,6 @@ const Entrance: React.FC = () => {
             <p className={styles.sectionText}>
               <span className={styles.textWrapper4}>14-16 июля</span>
               <span className={styles.textWrapper3}>
-                {" "}
                 — 1ая волна очных испытаний для поступающих на кинофакультет
               </span>
             </p>
@@ -139,7 +116,6 @@ const Entrance: React.FC = () => {
             <p className={styles.sectionText}>
               <span className={styles.textWrapper4}>24-26 июля</span>
               <span className={styles.textWrapper3}>
-                {" "}
                 — 2ая волна очных испытаний для поступающих на все факультеты
               </span>
             </p>
@@ -153,42 +129,20 @@ const Entrance: React.FC = () => {
             на 1 курсе в Новом Киноколледже по мастерским:
           </p>
         </div>
-        <div className={styles.cards}>
-          {faculties.map((faculty) => (
-            <div key={faculty.title} className={styles.card}>
-              <div className={styles.overlapGroup}>
-                <div
-                  className={styles.icon}
-                  style={{ backgroundColor: faculty.bgColor }}
-                >
-                  <img
-                    className={styles.img}
-                    src={faculty.icon}
-                    alt={faculty.title}
-                  />
-                </div>
-                <img
-                  className={styles.subtract}
-                  src={faculty.subtract}
-                  alt="Subtract"
-                />
-                <img className={styles.line2} src={lineSvg} alt="Line" />
-                <div
-                  className={styles.facultyTitle}
-                  style={{ color: faculty.textColor }}
-                >
-                  {faculty.title}
-                </div>
-                <div
-                  className={styles.places}
-                  style={{ color: faculty.textColor }}
-                >
-                  {faculty.places}
-                </div>
-              </div>
+        <CardsGrid>
+          {faculties.map((faculty, index) => (
+            <div
+              className={styles["card-container"]}
+              key={`${faculty.title}-${index}`}
+            >
+              <CardItem title={faculty.title} icon={faculty.icon}>
+                <span className={styles.places}>{faculty.places}</span>
+                <img className={styles.line} src={lineSvg} alt="Разделитель" />
+                <span className={styles.facultyTitle}>{faculty.title}</span>
+              </CardItem>
             </div>
           ))}
-        </div>
+        </CardsGrid>
       </div>
       <div className={styles.classes}>
         <div className={styles.sectionHeader}>
@@ -227,85 +181,7 @@ const Entrance: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={styles.portfolio}>
-        <div className={styles.facultyList2}>
-          <div className={styles.title}>Состав портфолио:</div>
-          <div className={styles.vStack}>
-            {[
-              "Для Актера",
-              "Для Сценариста",
-              "Для Режиссера",
-              "Для Режиссера монтажа",
-              "Для Звукорежиссера",
-              "Для Оператора",
-            ].map((item, index) => (
-              <div key={item} className={styles.field}>
-                {index === 0 && <div className={styles.vector}></div>}
-                <div
-                  className={
-                    index === 0 ? styles.facultyName : styles.facultyName2
-                  }
-                >
-                  {item}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className={styles.stack2}>
-          <div className={styles.sectionHeader2}>
-            <div className={styles.sectionTitle2}>Портфолио Актера</div>
-          </div>
-          <div className={styles.section}>
-            <div className={styles.sectionDetail}>
-              <p className={styles.sectionText4}>
-                Пять сочинений в свободной форме
-              </p>
-            </div>
-            <p className={styles.sectionText5}>
-              <span className={styles.textWrapper18}>
-                Напишите пять сочинений на темы: «Моя семья», «Мои друзья», «Мои
-                враги», «Мои мечты», «Почему я хочу стать (название профессии)».
-              </span>
-              <span className={styles.textWrapper19}>
-                Объем сочинений – на усмотрение автора, главное – раскрыть тему.
-                Все работы должны быть напечатаны в одном файле, в формате
-                "Word".
-              </span>
-            </p>
-          </div>
-          <div className={styles.section2}>
-            <div className={styles.sectionDetail}>
-              <div className={styles.sectionText4}>
-                Актерские номера (на видео):
-              </div>
-            </div>
-            <div className={styles.flexcontainer2}>
-              {[
-                "1. Стихотворения: одно из русской классики, второе на выбор – читать наизусть",
-                "2. Проза: отрывок из русской классики, второе на выбор – читать наизусть",
-                "3. Басня - читать наизусть",
-                "4. Танцевальный номер (народный танец, классический или современный.) Продолжительность 1-2 мин. Можно также отдельно записать несколько базовых движений, показывающих вашу гибкость и растяжку (шпагат, мостик и тд.).",
-                "5. Танцевальная копия или танцевальный отрывок на основе репертуара хореографа-постановщика.",
-                "Из списка предлагаемых хореографов выбрать одного и найти в его творчестве сольный номер (отрывок из танцевальной постановки). Продолжительность номера до 2 мин. Музыка в записи должна быть хорошо слышна. Разрешается переносить место танца на улицу.",
-                "Список хореографов: Морис Бежар, Пина Бауш, Саша Вальц, Антонио Гадес, Марта Грэм, Начо Дуато, Иржи Киллиан, Джин Келли, Мерс Каннингем, Игорь Моисеев, Кениет Макмиллан, Охад Нахарин, Анжелан Прельжокаж, Кристал Пайт, Иван Перез, Боб Фосс, Алвин Эйли, Матс Эк.",
-                "6. Песня (исполнение а-капелла).",
-                "7. Вокальная копия музыкальной композиции любого исполнителя. Запись можно сделать под любое музыкальное сопровождение. Важно петь с актёрским посылом, попадая в ноты.",
-                "* Также можно дополнить выступление имитацией-пародией на разные звуки, или спеть песню от лица разных персонажей, с разным характером: от лица ребёнка, юноши, девушки.",
-                "Требования к видеосъемке номеров:",
-                "- Хорошее качество съёмки (изображение не должно быть размытым)",
-                "- Свет и фон нейтральные",
-                "- В записи видео используйте, по возможности, разные планы (общий - в полный рост, средний план и крупный - лицо). Например, танец можно снять общим планом, стихотворение - средним, прозу - крупным.",
-                "Важно! Видеозаписи своих творческих номеров необходимо разместить в отдельных папках с названием каждой работы на облачном диске mail или yandex.",
-              ].map((item) => (
-                <p key={item} className={styles.spanWrapper}>
-                  <span className={styles.textWrapper18}>{item}</span>
-                </p>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <Portfolio />
     </>
   );
 };

@@ -6,46 +6,9 @@
   gap: 30px;
   justify-content: space-between;
 
-  .workshop-grid {
-    margin: 0 auto;
-    flex: 1;
-    display: grid;
-    max-width: 986px;
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
-    gap: 16px;
-  }
-
-  .card-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: center center / contain url("/icons/card-overlay.svg") no-repeat;
-    z-index: 0;
-  }
-
-  .workshop-item {
+  .card-container {
     position: relative;
-    max-width: 318px;
-    width: 100%;
-    aspect-ratio: 318 / 240;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.5s ease;
   }
-
-  .workshop-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 54px;
-    height: 54px;
-    z-index: 2;
-    transition: content 0.5s ease;
-  }
-
-
 
   .hover-image {
     position: absolute;
@@ -65,16 +28,6 @@
     mask-repeat: no-repeat;
   }
 
-  .workshop-item:hover .hover-image {
-    opacity: 1;
-  }
-  .workshop-item:hover .workshop-icon {
-    color: #0b4a4c;
-  }
-  .workshop-item:hover .title {
-    color: #efeeea;
-  }
-
   .title {
     max-width: 238px;
     position: absolute;
@@ -87,6 +40,15 @@
     vertical-align: bottom;
     z-index: 3;
     color: #191919;
+    transition: color 0.5s ease;
+  }
+.card-container:hover{cursor: pointer;}
+  .card-container:hover .hover-image {
+    opacity: 1;
+  }
+
+  .card-container:hover .title {
+    color: #efeeea;
   }
 
   .popup {
@@ -139,6 +101,7 @@
   }
 
   .popup-description {
+    white-space: pre-line;
     font-weight: 300;
     font-size: 14px;
     line-height: 1.4;

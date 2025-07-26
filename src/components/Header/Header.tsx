@@ -4,28 +4,8 @@ import { useEffect, useState } from "react";
 import { LinkButton } from "../../ui/LinkButton";
 import Logo from "../../assets/icons/logo.svg?react";
 import ScrollLink from "../ScrollLink/ScrollLink";
+import { ROUTE_CONFIG } from "../../utils/routeConfig";
 
-interface NavLinkItem {
-  title: string;
-  path: string;
-}
-
-// const navLinksTyped: NavLinkItem[] = [
-//   { title: "О нас", path: "/about" },
-//   { title: "Педагоги и сотрудники", path: "/teachers" },
-//   { title: "Факультеты", path: "/faculties" },
-//   { title: "Поступление", path: "/admission" },
-//   { title: "События", path: "/events" },
-// ];
-const navLinksTyped: NavLinkItem[] = [
-  { title: "О нас", path: "#about" },
-  { title: "Мастерские", path: "#workshops" },
-  { title: "Факультеты", path: "#faculties" },
-  { title: "Педагоги и сотрудники", path: "#teachers" },
-  { title: "Поступление", path: "/admission" },
-  // {title: "Проектно-продюсерский центр", path: "#prodcenter"}
-  // { title: "События", path: "#events" },
-];
 const Header: React.FC = () => {
   const [isHeroVisible, setIsHeroVisible] = useState(true);
 
@@ -57,8 +37,8 @@ const Header: React.FC = () => {
           <Logo className={styles.logo} width="140" height="38" />
         </NavLink>
         <div className={styles["nav-links"]}>
-          {navLinksTyped.map((link, index) => {
-            return link.path.startsWith("/") ? (
+          {ROUTE_CONFIG.filter(({ path }) => path !== "*").map((link, index) =>
+            link.path.startsWith("/") ? (
               <NavLink
                 key={index}
                 to={link.path}
@@ -69,13 +49,13 @@ const Header: React.FC = () => {
             ) : (
               <ScrollLink
                 key={index}
-                to={link.path}
+                to={link.path.slice(1)}
                 className={styles["nav-link"]}
               >
                 {link.title}
               </ScrollLink>
-            );
-          })}
+            ),
+          )}
           <LinkButton
             variant="outline"
             size="sm"
